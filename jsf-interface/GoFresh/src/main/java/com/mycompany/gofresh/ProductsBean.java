@@ -5,7 +5,6 @@
  */
 package com.mycompany.gofresh;
 
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.event.ValueChangeEvent;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonValue;
@@ -25,22 +26,26 @@ import javax.ws.rs.core.Response;
  *
  * @author carlossoares
  */
-
-@RequestScoped
+@SessionScoped
 @ManagedBean(name = "products")
-public class ProductsBean {
+public class ProductsBean  {
 
+    private int maxValue;
+    private int minValue;
     private String categoria;
+    private String searchText;
     private ArrayList<String> categorias;
     private ArrayList<Product> productList;
-    
+
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-
     public ProductsBean() {
         this.categoria = "Todos";
         allCategories();
         allProducts();
+        this.searchText = "";
+        this.minValue= minValue();
+        this.maxValue = maxValue();
     }
 
     public void setProductList(ArrayList<Product> productList) {
@@ -51,6 +56,16 @@ public class ProductsBean {
         this.categoria = categoria;
     }
 
+    public void setMaxValue(int maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    public void setMinValue(int minValue) {
+        this.minValue = minValue;
+    }
+
+    
+    
     public String getCategoria() {
         return this.categoria;
     }
@@ -61,6 +76,45 @@ public class ProductsBean {
 
     public void setCategorias(List<String> lista) {
         this.categorias = (ArrayList<String>) lista;
+    }
+
+    public String getSearchText() {
+        return searchText;
+    }
+
+    public void setSearchText(String searchText) {
+        this.searchText = searchText;
+    }
+
+    public int maxValue() {
+        int maxValue_temp = 0;
+        for (Product p : productList) {
+            if (p.getPrice() > maxValue_temp) {
+                maxValue_temp = (int) p.getPrice();
+            }
+        }
+        return maxValue_temp;
+
+    }
+    public int minValue() {
+        int maxValue_temp = 0;
+       
+        return maxValue_temp;
+
+    }
+
+    public void byName() {
+        if(this.searchText.isEmpty()){
+            byCategory();
+        }
+        System.out.println("bYName");
+        List<Product> results = new ArrayList<>();
+        for (Product p : productList) {
+            if (p.getName().contains(this.searchText) ) {
+                results.add(p);
+            }
+        }
+        setProductList((ArrayList<Product>) results);
     }
 
     public void allCategories() {
@@ -76,7 +130,7 @@ public class ProductsBean {
         for (JsonValue j : arr) {
             String s = j.toString();
             String[] res = s.split("\"");
-            
+
             results.add(res[1]);
         }
         results.add("Todos");
@@ -107,10 +161,18 @@ public class ProductsBean {
 
     }
 
+    public void categoryChanged(ValueChangeEvent e) {
+        //assign new value to localeCode
+        categoria = e.getNewValue().toString();
+        System.out.println(categoria);
+        byCategory();
+
+    }
+
     public void byCategory() {
-        if (getCategoria() == "Todos") {
+        if ("Todos".equals(getCategoria())) {
             allProducts();
-        } else if(getCategoria()!="Todos") {
+        } else if (!"Todos".equals(getCategoria())) {
             String targetUrl = "http://localhost:8090/product/byCategory?category=" + getCategoria();
             Client client = ClientBuilder.newClient();
             List<Product> results = new ArrayList<>();
@@ -137,7 +199,6 @@ public class ProductsBean {
     }
 
     public List<Product> getProductList() throws IOException {
-        
 
         return productList;
 
