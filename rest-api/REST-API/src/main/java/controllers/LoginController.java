@@ -11,7 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import services.LoginService;
 
@@ -25,12 +27,10 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
     
-    @RequestMapping(value="/login",method = POST)
-    public ResponseEntity<?> login(@RequestBody LoginBody user){
+    @RequestMapping(value="/login",method = GET)
+    public ResponseEntity<?> login(@RequestParam(value="username",required=false)String username,@RequestParam(value="password",required=false) String password){
         ResponseEntity<String> response;
-        String username = user.getUsername();
-        String password = user.getPassword();
-        if(username.isEmpty() || password.isEmpty()){
+        if(  username==null || password == null || username.isEmpty() || password.isEmpty()){
             response = new ResponseEntity<>("Please send all the information required",HttpStatus.BAD_REQUEST);
         }else{
             boolean flag = loginService.authenticate(username, password);
