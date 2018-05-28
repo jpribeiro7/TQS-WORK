@@ -1,3 +1,11 @@
-controllers\LoginController.class
+data\MockData.class
+services\UserService.class
+controllers\UserController.class
+model\LoginBody.class
 deployment\Application.class
+controllers\LoginController.class
+model\Product.class
+controllers\ProdutoController.class
 services\LoginService.class
+services\ProdutoService.class
+model\User.class

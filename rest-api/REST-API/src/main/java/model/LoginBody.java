@@ -5,20 +5,20 @@
  */
 package model;
 
-import java.io.Serializable;
-
 /**
  *
- * @author Pedro
+ * @author Carlos Soares
  */
-public class LoginBody implements Serializable{
+public class LoginBody {
     private String username;
     private String password;
-    
-    public LoginBody(String username,String password){
+
+    public LoginBody(String username, String password) {
         this.username = username;
         this.password = password;
     }
+  
+    
 
     public String getUsername() {
         return username;
