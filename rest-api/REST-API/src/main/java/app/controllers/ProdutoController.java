@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controllers;
+package app.controllers;
 
 import java.util.List;
-import model.LoginBody;
-import model.Product;
+import app.model.LoginBody;
+import app.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import services.ProdutoService;
+import app.services.ProdutoService;
+import java.util.Optional;
 
 /**
  *
@@ -40,10 +41,8 @@ public class ProdutoController {
     @RequestMapping(value="/byID",method = GET)
     public ResponseEntity<?> getProductByID(@RequestParam(value="id",required=false)Integer id){
         if (id == null) return new  ResponseEntity<String>("ID field wasn't sent",HttpStatus.BAD_REQUEST);
-        Product product = productService.getProductByID(id);
-        return product!=null ? 
-                new ResponseEntity<Product>(product,HttpStatus.OK): 
-                new ResponseEntity<String>("No product with this id",HttpStatus.NOT_FOUND);
+        Optional<Product> product = productService.getProductByID(id);
+        return new ResponseEntity<Optional<Product>>(product,HttpStatus.OK);    
     }
    
     @RequestMapping(value="/byCategory",method = GET)
