@@ -3,32 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package app.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Pedro
  */
+@Entity
 public class Product {
-    private int id;
+    @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    private Integer id;
     private String name;
     private String category;
-    private float price;
     private String description;
 
-    public Product(int id, String name, String category, float price, String description) {
-        this.id = id;
+    public Product(String name, String category, String description) {
         this.name = name;
         this.category = category;
-        this.price = price;
         this.description = description;
     }
+    
+    public Product(){
+        
+    }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -48,13 +57,6 @@ public class Product {
         this.category = category;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
 
     public String getDescription() {
         return description;

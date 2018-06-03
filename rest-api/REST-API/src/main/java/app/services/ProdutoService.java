@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
+package app.services;
 
-import data.MockData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import model.Product;
+import app.model.Product;
+import app.repository.ProductRepository;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,22 +21,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProdutoService {
     
+    @Autowired
+    private ProductRepository productRepository;
+    
     public List<Product> getAllProducts(){
-        return MockData.getAllProducts();
+        return productRepository.findAll();
     }
 
-    public Product getProductByID(int id) {
-        Product product = MockData.getAllProducts().stream().filter((f) -> id == f.getId()).findAny().orElse(null);
-        return product;
+    public Optional<Product> getProductByID(Integer id) {
+        return productRepository.findById(id);
     }
 
     public List<Product> getProductByCategory(String category) {
-        return MockData.getAllProducts().stream().filter(f -> f.getCategory().equals(category)).collect(Collectors.toList());
+        return productRepository.findByCategory(category);
     }
 
     public List<String> getAllCategories() {
         List<String> categories = new ArrayList<>();
-        MockData.getAllProducts().forEach(f ->{
+        productRepository.findAll().forEach(f ->{
             if (!categories.contains(f.getCategory()))
                 categories.add(f.getCategory());});
         return categories;
