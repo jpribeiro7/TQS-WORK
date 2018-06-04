@@ -8,6 +8,7 @@ package com.mycompany.gofresh;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -28,11 +29,12 @@ import javax.ws.rs.core.Response;
  */
 @SessionScoped
 @ManagedBean(name = "products")
-public class ProductsBean  {
+public class ProductsBean {
 
     private int maxValue;
     private int minValue;
     private String categoria;
+
     private String searchText;
     private ArrayList<String> categorias;
     private ArrayList<Product> productList;
@@ -44,7 +46,7 @@ public class ProductsBean  {
         allCategories();
         allProducts();
         this.searchText = "";
-        this.minValue= minValue();
+        this.minValue = minValue();
         this.maxValue = maxValue();
     }
 
@@ -64,8 +66,6 @@ public class ProductsBean  {
         this.minValue = minValue;
     }
 
-    
-    
     public String getCategoria() {
         return this.categoria;
     }
@@ -96,21 +96,32 @@ public class ProductsBean  {
         return maxValue_temp;
 
     }
+
     public int minValue() {
         int maxValue_temp = 0;
-       
+
         return maxValue_temp;
 
     }
 
+    public void ascendingOrder() {
+        Collections.sort(productList, new ProductComparator());
+
+    }
+
+    public void descendingOrder() {
+        Collections.sort(productList, new ProductComparator());
+        Collections.reverse(productList);
+    }
+
     public void byName() {
-        if(this.searchText.isEmpty()){
+        if (this.searchText.isEmpty()) {
             byCategory();
         }
         System.out.println("bYName");
         List<Product> results = new ArrayList<>();
         for (Product p : productList) {
-            if (p.getName().contains(this.searchText) ) {
+            if (p.getName().contains(this.searchText)) {
                 results.add(p);
             }
         }
@@ -144,15 +155,17 @@ public class ProductsBean  {
         List<Product> results = new ArrayList<>();
         Response response = client.target(targetUrl).request(MediaType.APPLICATION_JSON).get();
         JsonArray arr = response.readEntity(JsonArray.class);
+        System.out.println(arr);
         for (JsonValue j : arr) {
             JsonObject jo = (JsonObject) j;
             String name = jo.getString("name");
             String category = jo.getString("category");
             String description = jo.getString("description");
             int id = jo.getInt("id");
-            BigDecimal b = new BigDecimal(jo.getInt("price"));
-            float price = b.floatValue();
-            Product p = new Product(id, name, category, price, description);
+            //BigDecimal b = new BigDecimal(jo.getInt("price"));
+            //float price = b.floatValue();
+            float price = (float) 2.3;
+            Product p = new Product(id, name, category, 1, price, description);
             results.add(p);
         }
         response.close();
@@ -186,9 +199,10 @@ public class ProductsBean  {
                 String category = jo.getString("category");
                 String description = jo.getString("description");
                 int id = jo.getInt("id");
-                BigDecimal b = new BigDecimal(jo.getInt("price"));
-                float price = b.floatValue();
-                Product p = new Product(id, name, category, price, description);
+                //BigDecimal b = new BigDecimal(jo.getInt("price"));
+                //float price = b.floatValue();
+                float price = (float) 2.3;
+                Product p = new Product(id, name, category, 1, price, description);
                 results.add(p);
             }
             response.close();

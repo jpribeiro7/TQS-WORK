@@ -63,7 +63,7 @@
                                 </li>
 
                                 <li class="sale-noti">
-                                    <a href="index.xhtml">Produtos</a>
+                                    <a href="index.xhtml">Home</a>
                                 </li>
                                 <li >
                                     <a href="details.xhtml">Details</a>
@@ -81,10 +81,12 @@
                     </div>
 
                     <!-- Header Icon -->
-                    <div class="header-icons">
+                    <div class="header-icons" style="font-size: 14px">
+                        Hello, #{user.name} <h:outputText value="&#160;" />
                         <a href="profile.xhtml" class="header-wrapicon1 dis-block">
                             <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON"/>
                         </a>
+                        
 
                         <span class="linedivide1"></span>
 
@@ -108,7 +110,7 @@
                                                 </a>
 
                                                 <span class="header-cart-item-info">
-                                                    1 x #{item.price}
+                                                    #{item.quantity} x #{item.price}
                                                 </span>
                                             </div>
                                         </li>
@@ -138,6 +140,8 @@
                                 </div>
                             </div>
                         </div>
+                        <span class="linedivide1"></span>
+                        <a href="signIn.xhtml" style="" ><i class="fa fa-sign-out"></i> Logout</a>
                     </div>
                 </div>
             </div>
@@ -232,13 +236,16 @@
                         <div class="flex-sb-m flex-w p-b-35">
                             <div class="flex-w">
 
-                                <div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-                                    <select class="selection-2" name="sorting">
-                                        <option>Ordenar</option>
-                                        <option>Preço: Crescente</option>
-                                        <option>Preço: Decrescente</option>
-                                    </select>
-                                </div>
+                                
+                                     
+                                    <h:form>
+                                        Preço:
+                                        <h:outputText value="&#160;" /><h:outputText value="&#160;" />
+                                        <h:commandButton action="#{products.ascendingOrder()}" style="background-color: transparent; font-size: 20px"  value="↑"/>
+                                        <h:outputText value="&#160;" /><h:outputText value="&#160;" />
+                                        <h:commandButton action="#{products.descendingOrder()}" style="background-color: transparent; font-size: 20px" value="↓"/>
+                                    </h:form>
+                                
 
 
                             </div>
@@ -256,8 +263,10 @@
                                     <!-- Block2 -->
                                     <div class="block2">
                                         <div class="block2-img wrap-pic-w of-hidden pos-relative ">
+                                           
+                                            
                                             <img src="images/#{pro.name}.jpg" alt="IMG-PRODUCT"/>
-
+                                            
                                             <div class="block2-overlay trans-0-4">
                                                 <div class="block2-btn-addcart w-size1 trans-0-4">
                                                     <!-- Button -->
@@ -265,6 +274,9 @@
                                                         <h:commandButton class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" action="#{cart.addToCart()}" value="Add to Cart" >
                                                             <f:param name="name" value="#{pro.name}"/>
                                                             <f:param name="price" value="#{pro.price}"/>
+                                                            <f:param name="id" value="#{pro.id}"/>
+                                                            <f:param name="category" value="#{pro.category}"/>
+                                                            <f:param name="description" value="#{pro.description}"/>
 
                                                         </h:commandButton>
                                                     </h:form>
@@ -280,6 +292,8 @@
                                                     <f:param id="nome" name="name" value="${pro.name}"/>
                                                     <f:param id="price" name="price" value="${pro.price}"/>
                                                     <f:param id="description" name="description" value="${pro.description}"/>
+                                                    <f:param id="id" name="id" value="${pro.id}"/>
+                                                    <f:param id="category" name="category" value="#{pro.category}"/>
 
                                                 </h:commandButton>
 

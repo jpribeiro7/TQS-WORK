@@ -19,18 +19,30 @@ public class Product implements Serializable{
     private String category;
     private float price;
     private String description;
+    private int quantity;
+    private float subtotal;
     
 
-    public Product(int id,String name, String category, float price, String description) {
+    public Product(int id,String name, String category,int quantity, float price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
         this.id = id;
+        this.quantity=quantity;
     }
-
-    Product() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    
+    public void setQuantity(int quantity){
+        this.quantity=quantity;
+    }
+    
+    
+    public int getQuantity(){
+        return quantity;
+    }
+    public float getSubTotal(){
+        return price*quantity;
     }
 
     public String getName() {
@@ -75,8 +87,10 @@ public class Product implements Serializable{
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", description=" + description + '}';
+        return "Product{" + "id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", description=" + description + ", quantity=" + quantity + ", subtotal=" + subtotal + '}';
     }
+
+    
     
     
     
