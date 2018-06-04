@@ -45,7 +45,6 @@ public class Application implements CommandLineRunner {
         
         
         //--------------------------------------------------------------- PRODUCTS ----------------------------------------------------
-        
         Product p1 = new Product("couve","legume","cultivado no sul");
         Product p2 = new Product("alface","legume","é verde");
         Product p3 = new Product("beringela","legume","é grande");

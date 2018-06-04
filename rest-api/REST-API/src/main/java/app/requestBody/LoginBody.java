@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app.model;
+package app.requestBody;
 
 /**
  *
- * @author Carlos Soares
+ * @author Pedro
  */
 public class LoginBody {
     private String username;
@@ -17,8 +17,6 @@ public class LoginBody {
         this.username = username;
         this.password = password;
     }
-  
-    
 
     public String getUsername() {
         return username;

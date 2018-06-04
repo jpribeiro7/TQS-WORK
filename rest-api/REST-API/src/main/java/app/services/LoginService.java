@@ -5,7 +5,9 @@
  */
 package app.services;
 
+import app.model.User;
 import app.repository.UserRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +21,34 @@ public class LoginService {
     @Autowired
     private UserRepository userRepository;
     
-    public boolean authenticate(String username, String password){
-        System.out.println(username + " : "+password);
-        return userRepository.findByUsername(username).getPassword().equals(password);
+    public User authenticate(String username, String password){
+        User user = userRepository.findByUsername(username);
+        if(user!=null && user.getPassword().equals(password)){
+            return user;
+        }
+        return null;
     }
+
+    public boolean register(User data) {
+        if(checkIfCanAdd(data)){
+            userRepository.save(data);
+            return true;
+        }
+        return false;
+    }
+    
+    private boolean checkIfCanAdd(User user){
+        List<User> userList = userRepository.findAll();
+        if (!userList.stream().noneMatch(
+                    (u) -> (u.getUsername().equals(user.getUsername()) 
+                    || u.getEmail().equals(user.getEmail()) 
+                    || u.getNif().equals(user.getNif()))
+                )) 
+        {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }

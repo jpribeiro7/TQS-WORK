@@ -5,7 +5,9 @@
  */
 package app.controllers;
 
-import app.model.LoginBody;
+
+import app.model.User;
+import app.requestBody.LoginBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,15 +29,25 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
     
-    @RequestMapping(value="/login",method = GET)
-    public ResponseEntity<?> login(@RequestParam(value="username",required=false)String username,@RequestParam(value="password",required=false) String password){
-        ResponseEntity<String> response;
-        if(  username==null || password == null || username.isEmpty() || password.isEmpty()){
+    @RequestMapping(value="/login",method = POST)
+    public ResponseEntity<?> login(@RequestBody LoginBody login){
+        ResponseEntity<?> response;
+        if(  login.getUsername().isEmpty() || login.getPassword().isEmpty()){
             response = new ResponseEntity<>("Please send all the information required",HttpStatus.BAD_REQUEST);
         }else{
-            boolean flag = loginService.authenticate(username, password);
-            response = new ResponseEntity<>(flag+"",HttpStatus.OK);
+            User flag = loginService.authenticate(login.getUsername(),login.getPassword());
+            
+            response = flag == null ? 
+                    new ResponseEntity<>("No user in the system",HttpStatus.OK) 
+                    : new ResponseEntity<>(flag,HttpStatus.OK);
         }
+        return response;
+    }
+    
+    @RequestMapping(value="/register", method = POST)
+    public ResponseEntity<?> register(@RequestBody User data){
+        ResponseEntity<?> response = null;
+        response = new ResponseEntity<>(loginService.register(data),HttpStatus.OK);
         return response;
     }
 }
