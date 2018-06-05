@@ -1,48 +1,81 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>GoFresh</title>
-        
+
         <style type="text/css">
             .form-signin {
                 margin: 0 auto;
                 max-width: 330px;
                 padding: 5px;
             }
-        </style>
-    </h:head>
-    <h:body style="padding-top: 60px; background-image:url('images/background.jpg');background-size: cover">
-        <center>
-            <b:container>
+        </style><meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <!--===============================================================================================-->
+        </h:head>
+        <h:body style="padding-top: 60px; background-image:url('images/background.jpg');background-size: cover">
+            <center>
                 
-                <p:panel style="width:50%;border-radius: 40px">
-                    <h:form styleClass="form-signin" prependId="false">
 
-                        <h2 class="form-signin-heading">Log in</h2>
-                        <b:inputText id="email" placeholder="Endereço de Email" >
-                            <f:facet name="prepend">
-                                <b:icon name="user" />
-                            </f:facet>
-                        </b:inputText>
-                        <b:inputText id="password" placeholder="Password" type="password">
-                            <f:facet name="prepend">
-                                <b:iconAwesome name="key" />
-                            </f:facet>
-                        </b:inputText>
-                        <b:selectBooleanCheckbox value="true" caption="Remember me"/>
-                        <b:commandButton action="index.xhtml" look="success btn-block" value="Login" icon="log-in" size="lg"/>
-                    </h:form>
+                    <div style="background-color: white;width:40%;border-radius: 40px">
+                        <h:form styleClass="form-signin" prependId="false">
+                            <br/>
+                            <img src="images/icons/logo.jpg"  alt="GoFresh"/>
+                            <br/><br/>
+                            <div style="width: 75%;height: 40%;border-radius: 4px; border: 1px solid #BBB">
+                                <h:inputText id="username" value="#{user.username}" style="text-align: center ;width: 75%;border-radius: 4px; border: 1px solid gray" pt:placeholder="Username" >
+                            </h:inputText>
+                            </div>
+                            <br/>
+                            <div style="width: 75%;height: 40%;border-radius: 4px; border: 1px solid #BBB">
+                                <h:inputSecret id="password" value="#{user.password}" style="text-align: center ;width: 75%; border-radius: 4px" pt:placeholder="Password" ></h:inputSecret>
+                            </div>
+                            <h:outputText value="#{user.wrongCredentials}" style="font-size: 12px;color: red"/>
+                            <br/><br/>
+                            
+                            
+                            <h:commandButton style="width: 75%" action="#{user.login()}" class="btn btn-success" value="Login" />
+                            <br></br>
+                        </h:form>
+                        <br></br>
+
+                    </div>
+                
+            </center>
 
 
-                </p:panel>
-            </b:container>
-        </center>
-
-
-    </h:body>
+        </h:body>
 </html>
