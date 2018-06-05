@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: app.services.LoginServiceTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.085 s <<< FAILURE! - in app.services.LoginServiceTest
-testAuthenticate(app.services.LoginServiceTest)  Time elapsed: 0 s  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 2.358 s <<< FAILURE! - in app.services.LoginServiceTest
+testAuthenticate(app.services.LoginServiceTest)  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
 Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller

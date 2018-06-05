@@ -6,8 +6,11 @@
 package app.controllers;
 
 
+import app.model.Client;
+import app.model.Seller;
 import app.model.User;
 import app.requestBody.LoginBody;
+import app.requestBody.UserBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,9 +47,24 @@ public class LoginController {
     }
     
     @RequestMapping(value="/register", method = POST)
-    public ResponseEntity<?> register(@RequestBody User data){
+    public ResponseEntity<?> register(@RequestBody UserBody data){
         ResponseEntity<?> response = null;
-        response = new ResponseEntity<>(loginService.register(data),HttpStatus.OK);
+        User u = null;
+        if(data.getType().equals("client")){
+            u= new Client();
+        }else{
+            u = new Seller();
+        }
+        u.setUsername(data.getUsername());
+        u.setPassword(data.getPassword());
+            u.setName(data.getName());
+            u.setAddress(data.getAddress());
+            u.setCodigo_postal(data.getCodigo_postal());
+            u.setEmail(data.getEmail());
+            u.setPhone_number(data.getPhone_number());
+            u.setNif(data.getNif());
+            u.setType(data.getType());
+        response = new ResponseEntity<>(loginService.register(u),HttpStatus.OK);
         return response;
     }
 }

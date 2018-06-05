@@ -2,6 +2,7 @@ C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\repository\
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\repository\UserRepository.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\services\LoginService.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\controllers\UserController.java
+C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\controllers\SellerProductController.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\model\Client.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\model\Product.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\model\Seller_Product.java
@@ -12,7 +13,10 @@ C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\requestBody
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\model\Seller.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\services\UserService.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\controllers\LoginController.java
+C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\services\SellerProductService.java
+C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\requestBody\SellerProductBody.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\controllers\ProdutoController.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\util\Type.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\services\ProdutoService.java
 C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\model\Seller_ProductPk.java
+C:\Users\Pedro\Documents\NetBeansProjects\REST-API\src\main\java\app\requestBody\UserBody.java

@@ -5,6 +5,8 @@
  */
 package app.services;
 
+import app.model.Client;
+import app.model.Seller;
 import app.model.User;
 import app.repository.UserRepository;
 import java.util.List;

@@ -24,7 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  *
  * @author Pedro
- */
+ 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -38,12 +38,12 @@ public class UserServiceTest {
     
     /**
      * Test of getAllUsers method, of class UserService.
-      */
+     
 
     @Test
     public void testGetAllUsers() {
         List<User> list = new ArrayList<>();
-        list.add(new Seller("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
+        list.add(new Client("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,"client"));
                             
         Mockito.when(userRepository.findAll()).thenReturn(list);
         List<User> list_service = userService.getAllUsers();
@@ -54,12 +54,12 @@ public class UserServiceTest {
 
     /**
      * Test of getAllClients method, of class UserService.
-      */
+     
 
     @Test
     public void testGetAllClients() {
         List<User> list = new ArrayList<>();
-        list.add(new Client("itzme","arroz","Mário","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.client.toString()));
+        list.add(new Client("itzme","arroz","Mário","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,"client"));
         Mockito.when(userRepository.findByType(Type.client.toString())).thenReturn(list);
         List<User> list_service = userService.getAllClients();
         
@@ -68,12 +68,12 @@ public class UserServiceTest {
 
     /**
      * Test of getAllSellers method, of class UserService.
-     */
+     
 
     @Test
     public void testGetAllSellers() {
         List<User> list = new ArrayList<>();
-        list.add(new Seller("manelzinho","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
+        list.add(new Client("manelzinho","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,"client"));
         Mockito.when(userRepository.findByType(Type.seller.toString())).thenReturn(list);
         List<User> list_service = userService.getAllSellers();
         
@@ -81,3 +81,4 @@ public class UserServiceTest {
     }
     
 }
+*/
