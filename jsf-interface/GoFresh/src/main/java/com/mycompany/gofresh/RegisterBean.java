@@ -8,6 +8,7 @@ package com.mycompany.gofresh;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.Map;
+import javax.faces.application.FacesMessage;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.util.EntityUtils;
 
@@ -22,28 +23,31 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.json.simple.parser.ParseException;
+import org.primefaces.context.RequestContext;
 
 //import javax.faces.context.FacesContext;
 /**
  *
  * @author carlossoares
  */
-@ManagedBean(name = "user")
+@ManagedBean(name = "register")
 @SessionScoped
-public class UserBean {
+public class RegisterBean {
 
     private String name;
     private String username;
     private String password;
-    private String wrongCredentials;
-    private int id;
     private String email;
-    private  String morada;
-    private  String codigo_postal;
-    private  String telefone;
-    private  String nif;
+    private String morada;
+    private String codigo_postal;
+    private String telefone;
+    private String nif;
+    private String wrongCredentials;
+    private String success;
+    private String type;
+    private  String errors;
 
-    public UserBean() {
+    public RegisterBean() {
         this.name = "";
         this.email = "";
         this.morada = "";
@@ -52,7 +56,36 @@ public class UserBean {
         this.nif = "";
         this.username = "";
         this.password = "";
-        this.wrongCredentials = "";
+        this.type = "";
+        this.errors = "";
+        this.success="";
+    }
+
+    public String getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(String success) {
+        this.success = success;
+    }
+
+    public String getErrors() {
+        return errors;
+    }
+
+    public void setErrors(String errors) {
+        this.errors = errors;
+    }
+    
+    
+    
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getEmail() {
@@ -94,7 +127,6 @@ public class UserBean {
     public void setNif(String nif) {
         this.nif = nif;
     }
-    
 
     public String getWrongCredentials() {
         return wrongCredentials;
@@ -102,14 +134,6 @@ public class UserBean {
 
     public void setWrongCredentials(String wrongCredentials) {
         this.wrongCredentials = wrongCredentials;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -136,19 +160,17 @@ public class UserBean {
         this.password = password;
     }
 
-    public String login() throws IOException, ParseException {
-        FacesContext fc = FacesContext.getCurrentInstance();
-        Map<String, String> params
-                = fc.getExternalContext().getRequestParameterMap();
+    public String register() throws IOException, ParseException {
 
-        username = params.get("username");
-        String password = params.get("password");
-        System.out.println(params);
         CloseableHttpClient client = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("http://localhost:8090/login");
+        HttpPost httpPost = new HttpPost("http://localhost:8090/register");
 
-        String json = "{\"username\":\""+username+"\",\"password\":\""+password+"\"}";
-//        String json = "{\"username\":\"veggie\",\"password\":\"arroz\"}";
+        String json = "{\"username\":\"" + username + "\",\"password\":\"" + password + "\","
+                + "\"name\":\"" + name + "\",\"email\":\"" + email + "\","
+                + "\"nif\":\"" + Long.parseLong(nif) + "\",\"address\":\"" + morada + "\","
+                + "\"codigo_postal\":\"" + codigo_postal + "\",\"phone_number\":\"" + Long.parseLong(telefone) + "\","
+                + "\"type\":\"" + type
+                + "\"}";
         StringEntity entity = new StringEntity(json);
         httpPost.setEntity(entity);
         System.out.println(httpPost);
@@ -159,32 +181,17 @@ public class UserBean {
 
         String result = EntityUtils.toString(response.getEntity(), "UTF-8");
         System.out.println(result);
-        if (username.equals("") || password.equals("")){
-            setWrongCredentials("Username or password not valid!");
-            return "signIn";
-        }
-
-        if (!result.equals("No user in the system")) {
-            JSONParser parser = new JSONParser();
-            JSONObject res = (JSONObject) parser.parse(result);
+        if (result.equals("true")) {
             
-            client.close();
             setWrongCredentials("");
-            this.name = (String) res.get("name");
-            this.username=(String) res.get("username");
-            this.email=(String) res.get("email");
-            this.nif=(String) String.valueOf(res.get("nif"));
-            this.morada=(String) res.get("address");
-            this.codigo_postal=(String) res.get("codigo_postal");
-            this.telefone=(String) String.valueOf(res.get("phone_number"));
-            return "index";
-        } else {
-            setWrongCredentials("Username or password not valid!");
+            setSuccess("Registado com sucesso!");
+            
             return "signIn";
+        } else {
+            setErrors("Ocurreu algum erro");
+            return "register";
         }
-
         
-
     }
 
 }

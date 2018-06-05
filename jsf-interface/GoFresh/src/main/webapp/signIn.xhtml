@@ -64,13 +64,17 @@
                                 <h:inputSecret id="password" value="#{user.password}" style="text-align: center ;width: 75%; border-radius: 4px" pt:placeholder="Password" ></h:inputSecret>
                             </div>
                             <h:outputText value="#{user.wrongCredentials}" style="font-size: 12px;color: red"/>
+                            <h:outputText value="#{register.success}" style="font-size: 12px;color: green"/>
                             <br/><br/>
                             
                             
                             <h:commandButton style="width: 75%" action="#{user.login()}" class="btn btn-success" value="Login" />
                             <br></br>
                         </h:form>
+                        <span style="font-size: 12px">Ainda não está registado?<a href="register.xhtml" style="font-size: 12px"> Criar Conta</a></span>
                         <br></br>
+                        <br></br>
+                        
 
                     </div>
                 
