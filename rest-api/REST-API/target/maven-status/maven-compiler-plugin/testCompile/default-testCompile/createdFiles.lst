@@ -1,5 +1,3 @@
 app\controllers\LoginControllerTest.class
 app\controllers\UserControllerTest.class
 app\repository\UserRepositoryTest.class
-app\services\LoginServiceTest.class
-app\services\UserServiceTest.class

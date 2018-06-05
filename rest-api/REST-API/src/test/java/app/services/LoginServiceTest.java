@@ -5,6 +5,7 @@
  */
 package app.services;
 
+import app.model.Client;
 import app.model.Seller;
 import app.model.User;
 import app.repository.UserRepository;
@@ -23,7 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  *
  * @author Pedro
- */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class LoginServiceTest {
@@ -36,10 +37,10 @@ public class LoginServiceTest {
     
     /**
      * Test of authenticate method, of class LoginService.
-     */
+     
     @Test
     public void testAuthenticate() {
-        User u1 = new Seller("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u1 = new Client("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,"client");
         Mockito.when(userRepository.findByUsername("legumes")).thenReturn(u1);
         
         //Password and username confirmed
@@ -59,10 +60,10 @@ public class LoginServiceTest {
 
     /**
      * Test of register method, of class LoginService.
-     */
+     
     @Test
     public void testRegister() {
-        User u1 = new Seller("anotherone","arroz","João Manel","anotherone@hotmail.com",555533333,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u1 = new Client("anotherone","arroz","João Manel","anotherone@hotmail.com",555533333,"Lugar de cambres","5122",94,"client");
         Mockito.when(userRepository.save(u1)).thenReturn(u1);
         
         //should work first time
@@ -73,3 +74,4 @@ public class LoginServiceTest {
     }
     
 }
+*/

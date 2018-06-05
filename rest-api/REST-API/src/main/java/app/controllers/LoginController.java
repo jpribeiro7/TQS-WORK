@@ -63,6 +63,7 @@ public class LoginController {
             u.setEmail(data.getEmail());
             u.setPhone_number(data.getPhone_number());
             u.setNif(data.getNif());
+            u.setType(data.getType());
         response = new ResponseEntity<>(loginService.register(u),HttpStatus.OK);
         return response;
     }

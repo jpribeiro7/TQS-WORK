@@ -5,6 +5,7 @@
  */
 package app.controllers;
 
+import app.model.Client;
 import app.model.Seller;
 import app.model.User;
 import app.requestBody.LoginBody;
@@ -94,6 +95,7 @@ public class LoginControllerTest {
     public void testRegister() throws Exception {
         String json = "{\n" +
                         "    \"username\": \"veggie\",\n" +
+                        "    \"password\": \"veggie\",\n" +
                         "    \"name\": \"Alberto Coelho\",\n" +
                         "    \"email\": \"habemusvegie@hotmail.com\",\n" +
                         "    \"nif\": 222222222,\n" +
@@ -104,7 +106,7 @@ public class LoginControllerTest {
                         "}";
         
         ObjectMapper obj = new ObjectMapper();
-        User u1 = obj.readValue(json, User.class);
+        User u1 = obj.readValue(json, Client.class);
         
         //when register is accepted
         Mockito.when(loginService.register(u1)).thenReturn(true);
