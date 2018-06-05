@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>GoFresh</title>
+
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 5px;
+            }
+        </style><meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <!--===============================================================================================-->
+    </h:head>
+    <h:body style="padding-top: 60px; background-image:url('images/background.jpg');background-size: cover">
+        <center>
+
+
+            <div style="background-color: white;width:40%;border-radius: 40px">
+                <h:form styleClass="form-signin" prependId="false">
+                    <br/>
+                    <img src="images/icons/logo.jpg"  alt="GoFresh"/>
+                    <br/><br/>
+
+                    Nome de Utilizador
+                    <div style="width: 75%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputText id="username" value="#{register.username}" style="text-align: center ;width: 75%;height: 40%;border-radius: 4px; border: 1px solid gray"  >
+                        </h:inputText>
+                    </div>
+
+                    <br/>
+                    Palavra-passe:
+                    <div style="width: 75%;height: 40%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputSecret id="password" value="#{register.password}" style="text-align: center ;width: 75%; border-radius: 4px"  ></h:inputSecret>
+                    </div>
+
+                    <br/>
+                    Nome
+                    <div style="width: 75%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputText id="nome" value="#{register.name}" style="text-align: center ;width: 75%;height: 40%;border-radius: 4px; border: 1px solid gray"  >
+                        </h:inputText>
+                    </div>
+                    <br/>
+                    Email
+                    <div style="width: 75%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputText id="email" value="#{register.email}" style="text-align: center ;width: 75%;height: 40%;border-radius: 4px; border: 1px solid gray"  >
+                        </h:inputText>
+                    </div>
+                    <br/>
+                    NIF
+                    <div style="width: 75%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputText id="nif" value="#{register.nif}" style="text-align: center ;width: 75%;height: 40%;border-radius: 4px; border: 1px solid gray"  >
+                        </h:inputText>
+                    </div>
+                    <br/>
+                    Morada
+                    <div style="width: 75%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputText id="morada" value="#{register.morada}" style="text-align: center ;width: 75%;height: 40%;border-radius: 4px; border: 1px solid gray"  >
+                        </h:inputText>
+                    </div>
+                    <br/>
+                    Código Postal
+                    <div style="width: 75%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputText id="codigo_postal" value="#{register.codigo_postal}" style="text-align: center ;width: 75%;height: 40%;border-radius: 4px; border: 1px solid gray"  >
+                        </h:inputText>
+                    </div>
+                    <br/>
+                    Telefone
+                    <div style="width: 75%;border-radius: 4px; border: 1px solid #BBB">
+                        <h:inputText id="telefone" value="#{register.telefone}" style="text-align: center ;width: 75%;height: 40%;border-radius: 4px; border: 1px solid gray"  >
+                        </h:inputText>
+                    </div>
+                    <br/>
+                    Tipo de Utilizador<br/>
+                    <h:selectOneMenu value="#{register.type}">
+                        <f:selectItem itemValue="client"></f:selectItem>
+                        <f:selectItem itemValue="seller"></f:selectItem>
+
+                    </h:selectOneMenu>
+                    <br/><br/>
+
+
+                    <h:commandButton style="width: 75%" action="#{register.register()}" class="btn btn-success" value="Registar" />
+                    <br></br>
+                </h:form>
+                <br></br>
+
+            </div>
+
+        </center>
+
+        <p:dialog widgetVar="myDialogVar">
+            <h:outputText value="adasd"></h:outputText>
+        </p:dialog>
+
+
+
+    </h:body>
+</html>
