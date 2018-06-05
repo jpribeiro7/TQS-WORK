@@ -36,7 +36,6 @@ public class LoginController {
             response = new ResponseEntity<>("Please send all the information required",HttpStatus.BAD_REQUEST);
         }else{
             User flag = loginService.authenticate(login.getUsername(),login.getPassword());
-            
             response = flag == null ? 
                     new ResponseEntity<>("No user in the system",HttpStatus.OK) 
                     : new ResponseEntity<>(flag,HttpStatus.OK);

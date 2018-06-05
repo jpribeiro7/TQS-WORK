@@ -6,6 +6,8 @@
 package app.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -13,21 +15,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
 
 /**
  *
  * @author salome
  */
 @Entity
-public class User implements Serializable{
+@Inheritance
+public abstract class User implements Serializable{
     
     @JsonIgnore
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="USER_ID")
     private Integer id;
     @Column(unique=true)
     private String username;
-    @JsonIgnore
+    @JsonProperty(access = Access.WRITE_ONLY)
     private String password;
     private String name;
     @Column(unique=true)
@@ -38,6 +43,8 @@ public class User implements Serializable{
     private String codigo_postal;
     private Integer phone_number;
     private String type;
+    
+    
 
     public User(String username, String password, String name, String email, Integer nif, String address, String codigo_postal, Integer phone_number, String type) {
         this.username = username;
@@ -72,6 +79,7 @@ public class User implements Serializable{
         this.username = username;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
@@ -128,13 +136,7 @@ public class User implements Serializable{
         this.phone_number = phone_number;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+   
     
     @Override
     public int hashCode() {
@@ -149,6 +151,7 @@ public class User implements Serializable{
         hash = 17 * hash + Objects.hashCode(this.codigo_postal);
         hash = 17 * hash + Objects.hashCode(this.phone_number);
         hash = 17 * hash + Objects.hashCode(this.type);
+        
         return hash;
     }
 
@@ -191,7 +194,7 @@ public class User implements Serializable{
         if (!Objects.equals(this.phone_number, other.phone_number)) {
             return false;
         }
-        if (!Objects.equals(this.type, other.type)) {
+         if (!Objects.equals(this.type, other.type)) {
             return false;
         }
         return true;

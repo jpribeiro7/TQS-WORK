@@ -8,6 +8,7 @@ package app.repository;
 import java.util.List;
 import app.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -17,6 +18,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User,Integer>{
    List<User> findByName(String name);
-   List<User> findByType(String type);
    User findByUsername(String username);
+   List<User> findByType(String type);
 }

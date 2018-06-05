@@ -5,6 +5,8 @@
  */
 package app.repository;
 
+import app.model.Client;
+import app.model.Seller;
 import app.model.User;
 import app.util.Type;
 import java.util.ArrayList;
@@ -39,9 +41,9 @@ public class UserRepositoryTest {
     @Test
     public void testFindByName() {
         userRepository.deleteAll();
-        User u1 = new User("This is new user","arroz","New Name","newuser@hotmail.com",223332222,"Lugar de cambres","5122",94,Type.client.toString());
-        User u2 = new User("This is new user number 2","arroz","João Manel","nextuser@hotmail.com",433333333,"Lugar de cambres","5122",94,Type.seller.toString());
-        User u3 = new User("secondAlberto","arroz","New Name","aijesus@hotmail.com",222222225,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u1 = new Client("This is new user","arroz","New Name","newuser@hotmail.com",223332222,"Lugar de cambres","5122",94,Type.client.toString());
+        User u2 = new Seller("This is new user number 2","arroz","João Manel","nextuser@hotmail.com",433333333,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u3 = new Seller("secondAlberto","arroz","New Name","aijesus@hotmail.com",222222225,"Lugar de cambres","5122",94,Type.seller.toString());
         entityManager.persist(u1);
         entityManager.persist(u2);
         entityManager.persist(u3);
@@ -64,9 +66,9 @@ public class UserRepositoryTest {
     @Test
     public void testFindByType() {
         userRepository.deleteAll();
-        User u1 = new User("This is new user","arroz","Alberto Coelho","newuser@hotmail.com",223332222,"Lugar de cambres","5122",94,Type.client.toString());
-        User u2 = new User("This is new user number 2","arroz","João Manel","nextuser@hotmail.com",433333333,"Lugar de cambres","5122",94,Type.seller.toString());
-        User u3 = new User("secondAlberto","arroz","Alberto Coelho","aijesus@hotmail.com",222222225,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u1 = new Client("This is new user","arroz","Alberto Coelho","newuser@hotmail.com",223332222,"Lugar de cambres","5122",94,Type.client.toString());
+        User u2 = new Seller("This is new user number 2","arroz","João Manel","nextuser@hotmail.com",433333333,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u3 = new Seller("secondAlberto","arroz","Alberto Coelho","aijesus@hotmail.com",222222225,"Lugar de cambres","5122",94,Type.seller.toString());
         entityManager.persist(u1);
         entityManager.persist(u2);
         entityManager.persist(u3);
@@ -98,9 +100,9 @@ public class UserRepositoryTest {
     @Test
     public void testFindByUsername() {
         userRepository.deleteAll();
-        User u1 = new User("This is new user","arroz","Alberto Coelho","newuser@hotmail.com",223332222,"Lugar de cambres","5122",94,Type.client.toString());
-        User u2 = new User("This is new user number 2","arroz","João Manel","nextuser@hotmail.com",433333333,"Lugar de cambres","5122",94,Type.seller.toString());
-        User u3 = new User("secondAlberto","arroz","Alberto Coelho","aijesus@hotmail.com",222222225,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u1 = new Client("This is new user","arroz","Alberto Coelho","newuser@hotmail.com",223332222,"Lugar de cambres","5122",94,Type.client.toString());
+        User u2 = new Seller("This is new user number 2","arroz","João Manel","nextuser@hotmail.com",433333333,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u3 = new Seller("secondAlberto","arroz","Alberto Coelho","aijesus@hotmail.com",222222225,"Lugar de cambres","5122",94,Type.seller.toString());
         entityManager.persist(u1);
         entityManager.persist(u2);
         entityManager.persist(u3);
