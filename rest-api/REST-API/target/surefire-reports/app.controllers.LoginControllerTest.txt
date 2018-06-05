@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: app.controllers.LoginControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.986 s <<< FAILURE! - in app.controllers.LoginControllerTest
-testRegister(app.controllers.LoginControllerTest)  Time elapsed: 0.012 s  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.594 s <<< FAILURE! - in app.controllers.LoginControllerTest
+testRegister(app.controllers.LoginControllerTest)  Time elapsed: 0.023 s  <<< ERROR!
 com.fasterxml.jackson.databind.exc.InvalidDefinitionException: 
 Cannot construct instance of `app.model.User` (no Creators, like default construct, exist): abstract types either need to be mapped to concrete types, have custom deserializer, or contain additional type information
  at [Source: (String)"{

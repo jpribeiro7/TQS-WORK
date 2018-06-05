@@ -6,13 +6,16 @@
 package app.controllers;
     
 import app.model.Seller_Product;
+import app.requestBody.SellerProductBody;
 import app.services.SellerProductService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -33,5 +36,15 @@ public class SellerProductController {
                 new ResponseEntity<>(list,HttpStatus.OK): 
                 new ResponseEntity<>("No products were found",HttpStatus.NOT_FOUND);
     }
+    
+    @RequestMapping(value="/seller",method = GET)
+    public ResponseEntity<?> getAllProductSeller(@RequestBody SellerProductBody user){
+        List<Seller_Product> list = sellerProductService.getProductsSeller(user.getUsername());
+        return !list.isEmpty() ? 
+                new ResponseEntity<>(list,HttpStatus.OK): 
+                new ResponseEntity<>("No products were found",HttpStatus.NOT_FOUND);
+    }
+    
+    
     
 }

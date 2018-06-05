@@ -63,14 +63,15 @@ public class Application implements CommandLineRunner {
         final Product p4 = new Product("tomate","fruta","fresco e apanhado");
         final Product p5 = new Product("cenoura","legume","deixa os olhos bonitos");
         final Product p6 = new Product("batata","leguminosa","fritas são boas");
-        productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5,p6));
+        productRepository.saveAll(Arrays.asList(p1,p2,p3,p5,p6));
         
-        //----------------------------------------------------------------- Sellers ----------------------------------------------------
-        
+        //----------------------------------------------------------------- SELLER_PRODUCT ----------------------------------------------------
         final Seller_Product sp1 = new Seller_Product(2, 10,(Seller) u1, p6);
         final Seller_Product sp2 = new Seller_Product(1, 4,(Seller) u1, p1);
         final Seller_Product sp3 = new Seller_Product(0.5, 2,(Seller) u1, p5);
-        sellerProductRepository.saveAll(Arrays.asList(sp1,sp2,sp3));
+        final Seller_Product sp4 = new Seller_Product(1, 4,(Seller) u3, p2);
+        final Seller_Product sp5 = new Seller_Product(0.5, 2,(Seller) u3, p3);
+        sellerProductRepository.saveAll(Arrays.asList(sp1,sp2,sp3,sp4,sp5));
         
     }
 }

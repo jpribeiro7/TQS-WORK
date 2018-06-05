@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="app.services.LoginServiceTest" time="2.085" tests="2" errors="2" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="app.services.LoginServiceTest" time="3.351" tests="2" errors="2" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PT"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\Pedro\AppData\Local\Temp\surefire6442039067825557129\surefirebooter8988630643706601972.jar C:\Users\Pedro\AppData\Local\Temp\surefire6442039067825557129 2018-06-05T12-46-24_036-jvmRun1 surefire7623865234455618558tmp surefire_02744747545750977481tmp"/>
+    <property name="sun.java.command" value="C:\Users\Pedro\AppData\Local\Temp\surefire1237948325111624611\surefirebooter2847295516002706067.jar C:\Users\Pedro\AppData\Local\Temp\surefire1237948325111624611 2018-06-05T15-20-45_207-jvmRun1 surefire1669911548928739869tmp surefire_04840015742437213973tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\Pedro\Documents\NetBeansProjects\REST-API\target\test-classes;C:\Users\Pedro\Documents\NetBeansProjects\REST-API\target\classes;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.0.1.RELEASE\spring-boot-starter-web-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.1.RELEASE\spring-boot-starter-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot\2.0.1.RELEASE\spring-boot-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.1.RELEASE\spring-boot-autoconfigure-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.0.1.RELEASE\spring-boot-starter-logging-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Pedro\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Pedro\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.10.0\log4j-to-slf4j-2.10.0.jar;C:\Users\Pedro\.m2\repository\org\apache\logging\log4j\log4j-api\2.10.0\log4j-api-2.10.0.jar;C:\Users\Pedro\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\Pedro\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\Pedro\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.0.1.RELEASE\spring-boot-starter-json-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.5\jackson-databind-2.9.5.jar;C:\Users\Pedro\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\Pedro\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.5\jackson-core-2.9.5.jar;C:\Users\Pedro\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.5\jackson-datatype-jdk8-2.9.5.jar;C:\Users\Pedro\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.5\jackson-datatype-jsr310-2.9.5.jar;C:\Users\Pedro\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.5\jackson-module-parameter-names-2.9.5.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.0.1.RELEASE\spring-boot-starter-tomcat-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.29\tomcat-embed-core-8.5.29.jar;C:\Users\Pedro\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.29\tomcat-embed-el-8.5.29.jar;C:\Users\Pedro\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.29\tomcat-embed-websocket-8.5.29.jar;C:\Users\Pedro\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.9.Final\hibernate-validator-6.0.9.Final.jar;C:\Users\Pedro\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\Pedro\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\Pedro\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-web\5.0.5.RELEASE\spring-web-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-beans\5.0.5.RELEASE\spring-beans-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-webmvc\5.0.5.RELEASE\spring-webmvc-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-aop\5.0.5.RELEASE\spring-aop-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-context\5.0.5.RELEASE\spring-context-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-expression\5.0.5.RELEASE\spring-expression-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.0.1.RELEASE\spring-boot-starter-test-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-test\2.0.1.RELEASE\spring-boot-test-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.0.1.RELEASE\spring-boot-test-autoconfigure-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Pedro\.m2\repository\org\assertj\assertj-core\3.9.1\assertj-core-3.9.1.jar;C:\Users\Pedro\.m2\repository\org\mockito\mockito-core\2.15.0\mockito-core-2.15.0.jar;C:\Users\Pedro\.m2\repository\net\bytebuddy\byte-buddy\1.7.11\byte-buddy-1.7.11.jar;C:\Users\Pedro\.m2\repository\net\bytebuddy\byte-buddy-agent\1.7.11\byte-buddy-agent-1.7.11.jar;C:\Users\Pedro\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Pedro\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Pedro\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\Pedro\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\Pedro\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-core\5.0.5.RELEASE\spring-core-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-jcl\5.0.5.RELEASE\spring-jcl-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-test\5.0.5.RELEASE\spring-test-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\xmlunit\xmlunit-core\2.5.1\xmlunit-core-2.5.1.jar;C:\Users\Pedro\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\Pedro\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\Pedro\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\Pedro\.m2\repository\org\ow2\asm\asm\5.0.4\asm-5.0.4.jar;C:\Users\Pedro\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.0.1.RELEASE\spring-boot-starter-data-jpa-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.0.1.RELEASE\spring-boot-starter-aop-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\aspectj\aspectjweaver\1.8.13\aspectjweaver-1.8.13.jar;C:\Users\Pedro\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.0.1.RELEASE\spring-boot-starter-jdbc-2.0.1.RELEASE.jar;C:\Users\Pedro\.m2\repository\com\zaxxer\HikariCP\2.7.8\HikariCP-2.7.8.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-jdbc\5.0.5.RELEASE\spring-jdbc-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\hibernate\hibernate-core\5.2.16.Final\hibernate-core-5.2.16.Final.jar;C:\Users\Pedro\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.0.Final\hibernate-jpa-2.1-api-1.0.0.Final.jar;C:\Users\Pedro\.m2\repository\org\javassist\javassist\3.22.0-GA\javassist-3.22.0-GA.jar;C:\Users\Pedro\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Pedro\.m2\repository\org\jboss\jandex\2.0.3.Final\jandex-2.0.3.Final.jar;C:\Users\Pedro\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\Pedro\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;C:\Users\Pedro\.m2\repository\javax\transaction\javax.transaction-api\1.2\javax.transaction-api-1.2.jar;C:\Users\Pedro\.m2\repository\org\springframework\data\spring-data-jpa\2.0.6.RELEASE\spring-data-jpa-2.0.6.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\data\spring-data-commons\2.0.6.RELEASE\spring-data-commons-2.0.6.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-orm\5.0.5.RELEASE\spring-orm-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-tx\5.0.5.RELEASE\spring-tx-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\org\springframework\spring-aspects\5.0.5.RELEASE\spring-aspects-5.0.5.RELEASE.jar;C:\Users\Pedro\.m2\repository\com\h2database\h2\1.4.197\h2-1.4.197.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Pedro"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Pedro\AppData\Local\Temp\surefire6442039067825557129\surefirebooter8988630643706601972.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Pedro\AppData\Local\Temp\surefire1237948325111624611\surefirebooter2847295516002706067.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_151\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_151\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_151\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,19 +61,19 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testAuthenticate" classname="app.services.LoginServiceTest" time="0">
+  <testcase name="testAuthenticate" classname="app.services.LoginServiceTest" time="0.001">
     <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
 Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller
 Caused by: java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller
 Caused by: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller
 </error>
-    <system-out><![CDATA[2018-06-05 12:46:32.500  INFO 10812 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [app.services.LoginServiceTest], using SpringBootContextLoader
-2018-06-05 12:46:32.501  INFO 10812 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [app.services.LoginServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2018-06-05 12:46:32.501  INFO 10812 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [app.services.LoginServiceTest]: LoginServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2018-06-05 12:46:32.511  INFO 10812 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration app.Application for test class app.services.LoginServiceTest
-2018-06-05 12:46:32.513  INFO 10812 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2018-06-05 12:46:32.513  INFO 10812 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@44da745f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2435c6ae, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@574f9e36, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@77db231c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@60b4d934, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a3e633a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@41abee65, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6fc6f68f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@297dff3a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@30437e9c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2e057637, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@762f8ff6]
+    <system-out><![CDATA[2018-06-05 15:20:59.048  INFO 14060 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [app.services.LoginServiceTest], using SpringBootContextLoader
+2018-06-05 15:20:59.050  INFO 14060 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [app.services.LoginServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-06-05 15:20:59.050  INFO 14060 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [app.services.LoginServiceTest]: LoginServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-06-05 15:20:59.065  INFO 14060 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration app.Application for test class app.services.LoginServiceTest
+2018-06-05 15:20:59.067  INFO 14060 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 15:20:59.069  INFO 14060 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@26be0d23, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@576b385d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2560a7be, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@fabfc79, org.springframework.test.context.support.DirtiesContextTestExecutionListener@59aa2fba, org.springframework.test.context.transaction.TransactionalTestExecutionListener@578d5d02, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@77f04d1a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@27682fa9, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2fb70301, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@126f2eb8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@67823972, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1f1574c]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -83,19 +83,19 @@ Caused by: org.hibernate.TransientPropertyValueException: object references an u
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.0.1.RELEASE)
 
-2018-06-05 12:46:32.531  INFO 10812 --- [           main] app.services.LoginServiceTest            : Starting LoginServiceTest on DESKTOP-D1RJ7B6 with PID 10812 (started by Pedro in C:\Users\Pedro\Documents\NetBeansProjects\REST-API)
-2018-06-05 12:46:32.532  INFO 10812 --- [           main] app.services.LoginServiceTest            : No active profile set, falling back to default profiles: default
-2018-06-05 12:46:32.535  INFO 10812 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@400e741: startup date [Tue Jun 05 12:46:32 BST 2018]; root of context hierarchy
-2018-06-05 12:46:32.956  INFO 10812 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39de8215] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-06-05 12:46:33.040  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2018-06-05 12:46:33.041  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2018-06-05 12:46:33.063  INFO 10812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-06-05 12:46:33.064  INFO 10812 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-06-05 15:20:59.105  INFO 14060 --- [           main] app.services.LoginServiceTest            : Starting LoginServiceTest on DESKTOP-D1RJ7B6 with PID 14060 (started by Pedro in C:\Users\Pedro\Documents\NetBeansProjects\REST-API)
+2018-06-05 15:20:59.107  INFO 14060 --- [           main] app.services.LoginServiceTest            : No active profile set, falling back to default profiles: default
+2018-06-05 15:20:59.108  INFO 14060 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@32cde414: startup date [Tue Jun 05 15:20:59 BST 2018]; root of context hierarchy
+2018-06-05 15:20:59.712  INFO 14060 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4444822] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-05 15:20:59.833  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2018-06-05 15:20:59.836  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2018-06-05 15:20:59.865  INFO 14060 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:20:59.865  INFO 14060 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2018-06-05 12:46:33.073  INFO 10812 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2018-06-05 12:46:33.085  WARN 10812 --- [           main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): app.model.Seller_ProductPk
-2018-06-05 12:46:33.085  WARN 10812 --- [           main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): app.model.Seller_ProductPk
+2018-06-05 15:20:59.873  INFO 14060 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-06-05 15:20:59.892  WARN 14060 --- [           main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): app.model.Seller_ProductPk
+2018-06-05 15:20:59.892  WARN 14060 --- [           main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): app.model.Seller_ProductPk
 Hibernate: 
     
     drop table product if exists
@@ -169,25 +169,27 @@ Hibernate:
        add constraint FKhikdp8imci62np7e4u4ny79lb 
        foreign key (seller_id) 
        references user
-2018-06-05 12:46:33.127  INFO 10812 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@675b18ff'
-2018-06-05 12:46:33.129  INFO 10812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-06-05 12:46:33.316  INFO 10812 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-06-05 12:46:33.433  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@400e741: startup date [Tue Jun 05 12:46:32 BST 2018]; root of context hierarchy
-2018-06-05 12:46:33.438  WARN 10812 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2018-06-05 12:46:33.454  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.register(app.model.User)
-2018-06-05 12:46:33.454  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.login(app.requestBody.LoginBody)
-2018-06-05 12:46:33.455  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/categories],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllCategories()
-2018-06-05 12:46:33.455  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byID],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByID(java.lang.Integer)
-2018-06-05 12:46:33.455  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllProduct()
-2018-06-05 12:46:33.455  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byCategory],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByCategory(java.lang.String)
-2018-06-05 12:46:33.456  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allSellers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllSellers()
-2018-06-05 12:46:33.456  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllUsers()
-2018-06-05 12:46:33.456  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allClients],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllClients()
-2018-06-05 12:46:33.457  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-06-05 12:46:33.458  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-06-05 12:46:33.476  INFO 10812 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-06-05 12:46:33.476  INFO 10812 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-06-05 12:46:33.669  INFO 10812 --- [           main] app.services.LoginServiceTest            : Started LoginServiceTest in 1.154 seconds (JVM running for 9.319)
+2018-06-05 15:20:59.968  INFO 14060 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@43d76a92'
+2018-06-05 15:20:59.969  INFO 14060 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:21:00.274  INFO 14060 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 15:21:00.485  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@32cde414: startup date [Tue Jun 05 15:20:59 BST 2018]; root of context hierarchy
+2018-06-05 15:21:00.492  WARN 14060 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-06-05 15:21:00.515  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.register(app.model.User)
+2018-06-05 15:21:00.515  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.login(app.requestBody.LoginBody)
+2018-06-05 15:21:00.517  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/categories],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllCategories()
+2018-06-05 15:21:00.518  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byID],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByID(java.lang.Integer)
+2018-06-05 15:21:00.518  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllProduct()
+2018-06-05 15:21:00.518  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byCategory],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByCategory(java.lang.String)
+2018-06-05 15:21:00.519  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sellerProduct/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.SellerProductController.getAllProduct()
+2018-06-05 15:21:00.519  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sellerProduct/seller],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.SellerProductController.getAllProductSeller(app.requestBody.SellerProductBody)
+2018-06-05 15:21:00.520  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allClients],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllClients()
+2018-06-05 15:21:00.521  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllUsers()
+2018-06-05 15:21:00.521  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allSellers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllSellers()
+2018-06-05 15:21:00.522  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-05 15:21:00.523  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-05 15:21:00.556  INFO 14060 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 15:21:00.556  INFO 14060 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 15:21:00.816  INFO 14060 --- [           main] app.services.LoginServiceTest            : Started LoginServiceTest in 1.745 seconds (JVM running for 15.081)
 Hibernate: 
     call next value for hibernate_sequence
 Hibernate: 
@@ -198,15 +200,6 @@ Hibernate:
     call next value for hibernate_sequence
 Hibernate: 
     call next value for hibernate_sequence
-Hibernate: 
-    call next value for hibernate_sequence
-Hibernate: 
-    insert 
-    into
-        product
-        (category, description, name, product_id) 
-    values
-        (?, ?, ?, ?)
 Hibernate: 
     insert 
     into
@@ -257,17 +250,14 @@ Hibernate:
         and seller_pro0_.sellerid=?
 Hibernate: 
     select
-        seller_pro0_.productid as producti1_1_0_,
-        seller_pro0_.sellerid as sellerid2_1_0_,
-        seller_pro0_.price as price3_1_0_,
-        seller_pro0_.product_id as product_5_1_0_,
-        seller_pro0_.quantity as quantity4_1_0_,
-        seller_pro0_.seller_id as seller_i6_1_0_ 
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
     from
-        seller_product seller_pro0_ 
+        product product0_ 
     where
-        seller_pro0_.productid=? 
-        and seller_pro0_.sellerid=?
+        product0_.product_id=?
 Hibernate: 
     select
         seller_pro0_.productid as producti1_1_0_,
@@ -281,11 +271,90 @@ Hibernate:
     where
         seller_pro0_.productid=? 
         and seller_pro0_.sellerid=?
-2018-06-05 12:46:33.689 ERROR 10812 --- [           main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller]
-2018-06-05 12:46:33.696  INFO 10812 --- [           main] ConditionEvaluationReportLoggingListener : 
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+Hibernate: 
+    select
+        seller_pro0_.productid as producti1_1_0_,
+        seller_pro0_.sellerid as sellerid2_1_0_,
+        seller_pro0_.price as price3_1_0_,
+        seller_pro0_.product_id as product_5_1_0_,
+        seller_pro0_.quantity as quantity4_1_0_,
+        seller_pro0_.seller_id as seller_i6_1_0_ 
+    from
+        seller_product seller_pro0_ 
+    where
+        seller_pro0_.productid=? 
+        and seller_pro0_.sellerid=?
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+Hibernate: 
+    select
+        seller_pro0_.productid as producti1_1_0_,
+        seller_pro0_.sellerid as sellerid2_1_0_,
+        seller_pro0_.price as price3_1_0_,
+        seller_pro0_.product_id as product_5_1_0_,
+        seller_pro0_.quantity as quantity4_1_0_,
+        seller_pro0_.seller_id as seller_i6_1_0_ 
+    from
+        seller_product seller_pro0_ 
+    where
+        seller_pro0_.productid=? 
+        and seller_pro0_.sellerid=?
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+Hibernate: 
+    select
+        seller_pro0_.productid as producti1_1_0_,
+        seller_pro0_.sellerid as sellerid2_1_0_,
+        seller_pro0_.price as price3_1_0_,
+        seller_pro0_.product_id as product_5_1_0_,
+        seller_pro0_.quantity as quantity4_1_0_,
+        seller_pro0_.seller_id as seller_i6_1_0_ 
+    from
+        seller_product seller_pro0_ 
+    where
+        seller_pro0_.productid=? 
+        and seller_pro0_.sellerid=?
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+2018-06-05 15:21:00.845 ERROR 14060 --- [           main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller]
+2018-06-05 15:21:00.853  INFO 14060 --- [           main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-06-05 12:46:33.704 ERROR 10812 --- [           main] o.s.boot.SpringApplication               : Application run failed
+2018-06-05 15:21:00.865 ERROR 14060 --- [           main] o.s.boot.SpringApplication               : Application run failed
 
 java.lang.IllegalStateException: Failed to execute CommandLineRunner
 	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800) ~[spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
@@ -340,8 +409,8 @@ Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hiber
 	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.0.6.RELEASE.jar:2.0.6.RELEASE]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
-	at com.sun.proxy.$Proxy126.saveAll(Unknown Source) ~[na:na]
-	at app.Application.run(Application.java:73) ~[classes/:na]
+	at com.sun.proxy.$Proxy128.saveAll(Unknown Source) ~[na:na]
+	at app.Application.run(Application.java:74) ~[classes/:na]
 	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797) ~[spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
 	... 32 common frames omitted
 Caused by: java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller
@@ -369,9 +438,9 @@ Caused by: org.hibernate.TransientPropertyValueException: object references an u
 	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1436) ~[hibernate-core-5.2.16.Final.jar:5.2.16.Final]
 	... 59 common frames omitted
 
-2018-06-05 12:46:33.706  INFO 10812 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@400e741: startup date [Tue Jun 05 12:46:32 BST 2018]; root of context hierarchy
-2018-06-05 12:46:33.710  INFO 10812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-06-05 12:46:33.710  INFO 10812 --- [           main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2018-06-05 15:21:00.870  INFO 14060 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@32cde414: startup date [Tue Jun 05 15:20:59 BST 2018]; root of context hierarchy
+2018-06-05 15:21:00.874  INFO 14060 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:21:00.874  INFO 14060 --- [           main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
 Hibernate: 
     
     drop table product if exists
@@ -384,9 +453,9 @@ Hibernate:
 Hibernate: 
     
     drop sequence if exists hibernate_sequence
-2018-06-05 12:46:33.716  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2018-06-05 12:46:33.723  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2018-06-05 12:46:33.725 ERROR 10812 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@44da745f] to prepare test instance [app.services.LoginServiceTest@74026b18]
+2018-06-05 15:21:00.880  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2018-06-05 15:21:00.886  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2018-06-05 15:21:00.888 ERROR 14060 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@26be0d23] to prepare test instance [app.services.LoginServiceTest@3b17759c]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.0.5.RELEASE.jar:5.0.5.RELEASE]
@@ -444,8 +513,8 @@ Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hiber
 	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.0.6.RELEASE.jar:2.0.6.RELEASE]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
-	at com.sun.proxy.$Proxy126.saveAll(Unknown Source) ~[na:na]
-	at app.Application.run(Application.java:73) ~[classes/:na]
+	at com.sun.proxy.$Proxy128.saveAll(Unknown Source) ~[na:na]
+	at app.Application.run(Application.java:74) ~[classes/:na]
 	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797) ~[spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
 	... 32 common frames omitted
 Caused by: java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller
@@ -491,19 +560,19 @@ Caused by: org.hibernate.TransientPropertyValueException: object references an u
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.0.1.RELEASE)
 
-2018-06-05 12:46:33.749  INFO 10812 --- [           main] app.services.LoginServiceTest            : Starting LoginServiceTest on DESKTOP-D1RJ7B6 with PID 10812 (started by Pedro in C:\Users\Pedro\Documents\NetBeansProjects\REST-API)
-2018-06-05 12:46:33.749  INFO 10812 --- [           main] app.services.LoginServiceTest            : No active profile set, falling back to default profiles: default
-2018-06-05 12:46:33.753  INFO 10812 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@25a2c4dc: startup date [Tue Jun 05 12:46:33 BST 2018]; root of context hierarchy
-2018-06-05 12:46:34.023  INFO 10812 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39de8215] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-06-05 12:46:34.086  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2018-06-05 12:46:34.087  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2018-06-05 12:46:34.101  INFO 10812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-06-05 12:46:34.101  INFO 10812 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-06-05 15:21:00.928  INFO 14060 --- [           main] app.services.LoginServiceTest            : Starting LoginServiceTest on DESKTOP-D1RJ7B6 with PID 14060 (started by Pedro in C:\Users\Pedro\Documents\NetBeansProjects\REST-API)
+2018-06-05 15:21:00.929  INFO 14060 --- [           main] app.services.LoginServiceTest            : No active profile set, falling back to default profiles: default
+2018-06-05 15:21:00.931  INFO 14060 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@47fc9ce: startup date [Tue Jun 05 15:21:00 BST 2018]; root of context hierarchy
+2018-06-05 15:21:01.313  INFO 14060 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4444822] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-05 15:21:01.411  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2018-06-05 15:21:01.412  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2018-06-05 15:21:01.432  INFO 14060 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:21:01.432  INFO 14060 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2018-06-05 12:46:34.111  INFO 10812 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2018-06-05 12:46:34.124  WARN 10812 --- [           main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): app.model.Seller_ProductPk
-2018-06-05 12:46:34.124  WARN 10812 --- [           main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): app.model.Seller_ProductPk
+2018-06-05 15:21:01.445  INFO 14060 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-06-05 15:21:01.463  WARN 14060 --- [           main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): app.model.Seller_ProductPk
+2018-06-05 15:21:01.463  WARN 14060 --- [           main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): app.model.Seller_ProductPk
 Hibernate: 
     
     drop table product if exists
@@ -577,25 +646,27 @@ Hibernate:
        add constraint FKhikdp8imci62np7e4u4ny79lb 
        foreign key (seller_id) 
        references user
-2018-06-05 12:46:34.174  INFO 10812 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@675b18ff'
-2018-06-05 12:46:34.175  INFO 10812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-06-05 12:46:34.350  INFO 10812 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-06-05 12:46:34.428  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@25a2c4dc: startup date [Tue Jun 05 12:46:33 BST 2018]; root of context hierarchy
-2018-06-05 12:46:34.431  WARN 10812 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2018-06-05 12:46:34.440  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.register(app.model.User)
-2018-06-05 12:46:34.440  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.login(app.requestBody.LoginBody)
-2018-06-05 12:46:34.440  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/categories],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllCategories()
-2018-06-05 12:46:34.440  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byID],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByID(java.lang.Integer)
-2018-06-05 12:46:34.441  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllProduct()
-2018-06-05 12:46:34.441  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byCategory],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByCategory(java.lang.String)
-2018-06-05 12:46:34.441  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allSellers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllSellers()
-2018-06-05 12:46:34.441  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllUsers()
-2018-06-05 12:46:34.441  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allClients],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllClients()
-2018-06-05 12:46:34.442  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-06-05 12:46:34.442  INFO 10812 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-06-05 12:46:34.454  INFO 10812 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-06-05 12:46:34.454  INFO 10812 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-06-05 12:46:34.569  INFO 10812 --- [           main] app.services.LoginServiceTest            : Started LoginServiceTest in 0.84 seconds (JVM running for 10.218)
+2018-06-05 15:21:01.535  INFO 14060 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@43d76a92'
+2018-06-05 15:21:01.536  INFO 14060 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:21:01.871  INFO 14060 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 15:21:02.036  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@47fc9ce: startup date [Tue Jun 05 15:21:00 BST 2018]; root of context hierarchy
+2018-06-05 15:21:02.040  WARN 14060 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-06-05 15:21:02.055  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.register(app.model.User)
+2018-06-05 15:21:02.059  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.LoginController.login(app.requestBody.LoginBody)
+2018-06-05 15:21:02.060  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/categories],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllCategories()
+2018-06-05 15:21:02.061  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byID],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByID(java.lang.Integer)
+2018-06-05 15:21:02.061  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getAllProduct()
+2018-06-05 15:21:02.061  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/byCategory],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.ProdutoController.getProductByCategory(java.lang.String)
+2018-06-05 15:21:02.062  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sellerProduct/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.SellerProductController.getAllProduct()
+2018-06-05 15:21:02.062  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/sellerProduct/seller],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.SellerProductController.getAllProductSeller(app.requestBody.SellerProductBody)
+2018-06-05 15:21:02.063  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allClients],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllClients()
+2018-06-05 15:21:02.064  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllUsers()
+2018-06-05 15:21:02.064  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/allSellers],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> app.controllers.UserController.getAllSellers()
+2018-06-05 15:21:02.065  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-05 15:21:02.065  INFO 14060 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-05 15:21:02.088  INFO 14060 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 15:21:02.088  INFO 14060 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-05 15:21:02.375  INFO 14060 --- [           main] app.services.LoginServiceTest            : Started LoginServiceTest in 1.481 seconds (JVM running for 16.638)
 Hibernate: 
     call next value for hibernate_sequence
 Hibernate: 
@@ -606,15 +677,6 @@ Hibernate:
     call next value for hibernate_sequence
 Hibernate: 
     call next value for hibernate_sequence
-Hibernate: 
-    call next value for hibernate_sequence
-Hibernate: 
-    insert 
-    into
-        product
-        (category, description, name, product_id) 
-    values
-        (?, ?, ?, ?)
 Hibernate: 
     insert 
     into
@@ -665,17 +727,14 @@ Hibernate:
         and seller_pro0_.sellerid=?
 Hibernate: 
     select
-        seller_pro0_.productid as producti1_1_0_,
-        seller_pro0_.sellerid as sellerid2_1_0_,
-        seller_pro0_.price as price3_1_0_,
-        seller_pro0_.product_id as product_5_1_0_,
-        seller_pro0_.quantity as quantity4_1_0_,
-        seller_pro0_.seller_id as seller_i6_1_0_ 
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
     from
-        seller_product seller_pro0_ 
+        product product0_ 
     where
-        seller_pro0_.productid=? 
-        and seller_pro0_.sellerid=?
+        product0_.product_id=?
 Hibernate: 
     select
         seller_pro0_.productid as producti1_1_0_,
@@ -689,11 +748,90 @@ Hibernate:
     where
         seller_pro0_.productid=? 
         and seller_pro0_.sellerid=?
-2018-06-05 12:46:34.580 ERROR 10812 --- [           main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller]
-2018-06-05 12:46:34.582  INFO 10812 --- [           main] ConditionEvaluationReportLoggingListener : 
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+Hibernate: 
+    select
+        seller_pro0_.productid as producti1_1_0_,
+        seller_pro0_.sellerid as sellerid2_1_0_,
+        seller_pro0_.price as price3_1_0_,
+        seller_pro0_.product_id as product_5_1_0_,
+        seller_pro0_.quantity as quantity4_1_0_,
+        seller_pro0_.seller_id as seller_i6_1_0_ 
+    from
+        seller_product seller_pro0_ 
+    where
+        seller_pro0_.productid=? 
+        and seller_pro0_.sellerid=?
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+Hibernate: 
+    select
+        seller_pro0_.productid as producti1_1_0_,
+        seller_pro0_.sellerid as sellerid2_1_0_,
+        seller_pro0_.price as price3_1_0_,
+        seller_pro0_.product_id as product_5_1_0_,
+        seller_pro0_.quantity as quantity4_1_0_,
+        seller_pro0_.seller_id as seller_i6_1_0_ 
+    from
+        seller_product seller_pro0_ 
+    where
+        seller_pro0_.productid=? 
+        and seller_pro0_.sellerid=?
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+Hibernate: 
+    select
+        seller_pro0_.productid as producti1_1_0_,
+        seller_pro0_.sellerid as sellerid2_1_0_,
+        seller_pro0_.price as price3_1_0_,
+        seller_pro0_.product_id as product_5_1_0_,
+        seller_pro0_.quantity as quantity4_1_0_,
+        seller_pro0_.seller_id as seller_i6_1_0_ 
+    from
+        seller_product seller_pro0_ 
+    where
+        seller_pro0_.productid=? 
+        and seller_pro0_.sellerid=?
+Hibernate: 
+    select
+        product0_.product_id as product_1_0_0_,
+        product0_.category as category2_0_0_,
+        product0_.description as descript3_0_0_,
+        product0_.name as name4_0_0_ 
+    from
+        product product0_ 
+    where
+        product0_.product_id=?
+2018-06-05 15:21:02.401 ERROR 14060 --- [           main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller]
+2018-06-05 15:21:02.404  INFO 14060 --- [           main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-06-05 12:46:34.583 ERROR 10812 --- [           main] o.s.boot.SpringApplication               : Application run failed
+2018-06-05 15:21:02.406 ERROR 14060 --- [           main] o.s.boot.SpringApplication               : Application run failed
 
 java.lang.IllegalStateException: Failed to execute CommandLineRunner
 	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800) ~[spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
@@ -748,8 +886,8 @@ Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hiber
 	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.0.6.RELEASE.jar:2.0.6.RELEASE]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
-	at com.sun.proxy.$Proxy126.saveAll(Unknown Source) ~[na:na]
-	at app.Application.run(Application.java:73) ~[classes/:na]
+	at com.sun.proxy.$Proxy128.saveAll(Unknown Source) ~[na:na]
+	at app.Application.run(Application.java:74) ~[classes/:na]
 	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797) ~[spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
 	... 32 common frames omitted
 Caused by: java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller
@@ -777,9 +915,9 @@ Caused by: org.hibernate.TransientPropertyValueException: object references an u
 	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1436) ~[hibernate-core-5.2.16.Final.jar:5.2.16.Final]
 	... 59 common frames omitted
 
-2018-06-05 12:46:34.586  INFO 10812 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@25a2c4dc: startup date [Tue Jun 05 12:46:33 BST 2018]; root of context hierarchy
-2018-06-05 12:46:34.588  INFO 10812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-06-05 12:46:34.589  INFO 10812 --- [           main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2018-06-05 15:21:02.406  INFO 14060 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@47fc9ce: startup date [Tue Jun 05 15:21:00 BST 2018]; root of context hierarchy
+2018-06-05 15:21:02.411  INFO 14060 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:21:02.411  INFO 14060 --- [           main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
 Hibernate: 
     
     drop table product if exists
@@ -792,9 +930,9 @@ Hibernate:
 Hibernate: 
     
     drop sequence if exists hibernate_sequence
-2018-06-05 12:46:34.592  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2018-06-05 12:46:34.596  INFO 10812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
-2018-06-05 12:46:34.598 ERROR 10812 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@44da745f] to prepare test instance [app.services.LoginServiceTest@6c3884f5]
+2018-06-05 15:21:02.414  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2018-06-05 15:21:02.418  INFO 14060 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2018-06-05 15:21:02.420 ERROR 14060 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@26be0d23] to prepare test instance [app.services.LoginServiceTest@12925d2]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.0.5.RELEASE.jar:5.0.5.RELEASE]
@@ -852,8 +990,8 @@ Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hiber
 	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.0.6.RELEASE.jar:2.0.6.RELEASE]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:185) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.0.5.RELEASE.jar:5.0.5.RELEASE]
-	at com.sun.proxy.$Proxy126.saveAll(Unknown Source) ~[na:na]
-	at app.Application.run(Application.java:73) ~[classes/:na]
+	at com.sun.proxy.$Proxy128.saveAll(Unknown Source) ~[na:na]
+	at app.Application.run(Application.java:74) ~[classes/:na]
 	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:797) ~[spring-boot-2.0.1.RELEASE.jar:2.0.1.RELEASE]
 	... 32 common frames omitted
 Caused by: java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : app.model.Seller_Product.seller -> app.model.Seller

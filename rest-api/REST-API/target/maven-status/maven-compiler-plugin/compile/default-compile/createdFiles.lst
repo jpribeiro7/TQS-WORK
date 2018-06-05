@@ -2,6 +2,7 @@ app\controllers\UserController.class
 app\services\LoginService.class
 app\model\Seller_Product.class
 app\model\Client.class
+app\services\SellerProductService.class
 app\controllers\ProdutoController.class
 app\services\ProdutoService.class
 app\model\Seller.class
@@ -14,5 +15,7 @@ app\repository\ProductRepository.class
 app\util\Type.class
 app\services\UserService.class
 app\model\Seller_ProductPk.class
+app\controllers\SellerProductController.class
 app\Application.class
+app\requestBody\SellerProductBody.class
 app\model\Product.class
