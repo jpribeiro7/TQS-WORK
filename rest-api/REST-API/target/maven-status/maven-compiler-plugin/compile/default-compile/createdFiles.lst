@@ -1,4 +1,5 @@
 app\controllers\UserController.class
+app\requestBody\UserBody.class
 app\services\LoginService.class
 app\model\Seller_Product.class
 app\model\Client.class
