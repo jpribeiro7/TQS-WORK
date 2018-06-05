@@ -28,11 +28,11 @@ public class UserService {
     }
     
     public List<User> getAllClients(){
-        return userList.findByType(Type.client.toString());
+        return userList.findByType("client");
     }
     
     public List<User> getAllSellers(){
-        return userList.findByType(Type.seller.toString());
+        return userList.findByType("seller");
     }
     
 }

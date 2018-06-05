@@ -5,8 +5,8 @@
  */
 package app.repository;
 
-import app.model.Product;
-import java.util.List;
+import app.model.Seller_Product;
+import app.model.Seller_ProductPk;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author Pedro
  */
 @Repository
-public interface ProductRepository extends JpaRepository<Product,Integer>{
-    Product findByName(String name);
-    List<Product> findByCategory(String category);
+public interface SellerProductRepository extends JpaRepository<Seller_Product,Seller_ProductPk>{
+    
 }

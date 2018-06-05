@@ -5,6 +5,8 @@
  */
 package app.controllers;
 
+import app.model.Client;
+import app.model.Seller;
 import app.model.User;
 import app.services.UserService;
 import app.util.Type;
@@ -54,7 +56,7 @@ public class UserControllerTest {
     @Test
     public void testGetAllUsers() throws JsonProcessingException, Exception {
        List<User> list = new ArrayList<>();
-       list.add(new User("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
+       list.add(new Seller("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
        Mockito.when(userService.getAllUsers()).thenReturn(list);
        
        
@@ -70,8 +72,8 @@ public class UserControllerTest {
     @Test
     public void testGetAllClients() throws Exception {
        List<User> list = new ArrayList<>();
-       list.add(new User("once","arroz","Joãozito","soutalvez@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.client.toString()));
-       list.add(new User("told me","arroz","Joãozinho","nuncafui@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.client.toString()));
+       list.add(new Client("once","arroz","Joãozito","soutalvez@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.client.toString()));
+       list.add(new Client("told me","arroz","Joãozinho","nuncafui@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.client.toString()));
        
        Mockito.when(userService.getAllClients()).thenReturn(list);
        
@@ -86,8 +88,8 @@ public class UserControllerTest {
     @Test
     public void testGetAllSellers() throws Exception {
         List<User> list = new ArrayList<>();
-       list.add(new User("once","arroz","Joãozito","soutalvez@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
-       list.add(new User("told me","arroz","Joãozinho","nuncafui@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
+       list.add(new Seller("once","arroz","Joãozito","soutalvez@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
+       list.add(new Seller("told me","arroz","Joãozinho","nuncafui@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
        
        Mockito.when(userService.getAllSellers()).thenReturn(list);
        

@@ -5,6 +5,7 @@
  */
 package app.services;
 
+import app.model.Seller;
 import app.model.User;
 import app.repository.UserRepository;
 import app.util.Type;
@@ -38,7 +39,7 @@ public class LoginServiceTest {
      */
     @Test
     public void testAuthenticate() {
-        User u1 = new User("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u1 = new Seller("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString());
         Mockito.when(userRepository.findByUsername("legumes")).thenReturn(u1);
         
         //Password and username confirmed
@@ -61,7 +62,7 @@ public class LoginServiceTest {
      */
     @Test
     public void testRegister() {
-        User u1 = new User("anotherone","arroz","João Manel","anotherone@hotmail.com",555533333,"Lugar de cambres","5122",94,Type.seller.toString());
+        User u1 = new Seller("anotherone","arroz","João Manel","anotherone@hotmail.com",555533333,"Lugar de cambres","5122",94,Type.seller.toString());
         Mockito.when(userRepository.save(u1)).thenReturn(u1);
         
         //should work first time

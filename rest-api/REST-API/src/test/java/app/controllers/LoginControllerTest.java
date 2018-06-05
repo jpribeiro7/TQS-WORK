@@ -5,6 +5,7 @@
  */
 package app.controllers;
 
+import app.model.Seller;
 import app.model.User;
 import app.requestBody.LoginBody;
 import app.services.LoginService;
@@ -55,7 +56,7 @@ public class LoginControllerTest {
      */
     @Test
     public void testLogin() throws Exception {
-       User u1 = new User("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString());
+       User u1 = new Seller("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString());
        Mockito.when(loginService.authenticate("legumes", "arroz")).thenReturn(u1);
        
        

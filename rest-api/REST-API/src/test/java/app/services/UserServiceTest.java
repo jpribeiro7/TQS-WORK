@@ -5,6 +5,8 @@
  */
 package app.services;
 
+import app.model.Client;
+import app.model.Seller;
 import app.model.User;
 import app.repository.UserRepository;
 import app.util.Type;
@@ -41,7 +43,7 @@ public class UserServiceTest {
     @Test
     public void testGetAllUsers() {
         List<User> list = new ArrayList<>();
-        list.add(new User("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
+        list.add(new Seller("legumes","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
                             
         Mockito.when(userRepository.findAll()).thenReturn(list);
         List<User> list_service = userService.getAllUsers();
@@ -57,7 +59,7 @@ public class UserServiceTest {
     @Test
     public void testGetAllClients() {
         List<User> list = new ArrayList<>();
-        list.add(new User("itzme","arroz","Mário","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.client.toString()));
+        list.add(new Client("itzme","arroz","Mário","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.client.toString()));
         Mockito.when(userRepository.findByType(Type.client.toString())).thenReturn(list);
         List<User> list_service = userService.getAllClients();
         
@@ -71,7 +73,7 @@ public class UserServiceTest {
     @Test
     public void testGetAllSellers() {
         List<User> list = new ArrayList<>();
-        list.add(new User("manelzinho","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
+        list.add(new Seller("manelzinho","arroz","João Manel","sou@hotmail.com",233333333,"Lugar de cambres","5122",94,Type.seller.toString()));
         Mockito.when(userRepository.findByType(Type.seller.toString())).thenReturn(list);
         List<User> list_service = userService.getAllSellers();
         
