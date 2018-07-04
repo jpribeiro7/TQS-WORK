@@ -9,6 +9,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 dir 'REST-API'
+                pwd
                 sh 'mvn compile'
             }
         }
@@ -16,6 +17,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 dir 'REST-API'
+                pwd
                 sh 'mvn test'
             }
         }
