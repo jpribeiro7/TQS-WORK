@@ -1,6 +1,10 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
+    tools {
+        maven "Apache Maven 3.3.9"
+        java "jdk1.8.0_701"
+    }
 
     stages {
         stage('Compile') {
