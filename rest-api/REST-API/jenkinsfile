@@ -8,14 +8,14 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Building...'
-                sh 'mvn -f REST-API/pom.xml clean compile'
+                sh 'mvn -f rest-api/REST-API/pom.xml clean compile'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
                 dir 'REST-API'
-                sh 'mvn -f REST-API/pom.xml test'
+                sh 'mvn -f rest-api/REST-API/pom.xml test'
             }
         }
     }
