@@ -9,15 +9,13 @@ pipeline {
             steps {
                 echo 'Building..'
                 dir 'REST-API'
-                sh 'pwd'
-                sh 'mvn compile'
+                sh 'mvn clean compile'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
                 dir 'REST-API'
-                sh 'pwd'
                 sh 'mvn test'
             }
         }
