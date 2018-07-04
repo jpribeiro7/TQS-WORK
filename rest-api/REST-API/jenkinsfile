@@ -8,15 +8,13 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Building..'
-                sh 'pwd'
-                sh 'mvn compile'
+                sh 'cd REST-API/ | mvn compile'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'cd REST-API/'
-                sh 'mvn test'
+                sh 'cd REST-API/ | mvn test'
             }
         }
     }
