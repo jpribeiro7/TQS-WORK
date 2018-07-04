@@ -8,6 +8,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Building..'
+                sh 'pwd'
                 sh 'mvn compile'
             }
         }
