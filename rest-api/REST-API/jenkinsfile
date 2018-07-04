@@ -13,8 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-                dir 'REST-API'
+                echo 'Testing...'
                 sh 'mvn -f rest-api/REST-API/pom.xml test'
             }
         }
