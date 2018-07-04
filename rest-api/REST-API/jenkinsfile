@@ -8,7 +8,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Building..'
-                sh 'cd REST-API/'
+                sh 'pwd'
                 sh 'mvn compile'
             }
         }
