@@ -9,7 +9,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Building...'
-                sh 'fuser -k 8090/tcp'
+                sh 'kill -9 `lsof -t -i :8090`'
                 sh 'mvn -f rest-api/REST-API/pom.xml clean compile'
             }
         }
