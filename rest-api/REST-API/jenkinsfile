@@ -6,16 +6,6 @@ pipeline {
 
     
     stages {
-        stage('Slack Notification') {
-            steps {
-                echo 'Building...'
-                slackSend baseUrl: 'https://l2b6ed.slack.com/services/hooks/jenkins-ci',
-                channel: '#tqs_work',
-                color: 'good',
-                message: 'Testing notification',
-                tokenCredentialId: '749nOdVmk8TOVvqZll0kHrHV'
-            }
-        }
         stage('Compile') {
             steps {
                 echo 'Building...'
@@ -30,11 +20,20 @@ pipeline {
         }
          stage('Static Code Analisys') {
             steps {
-                echo 'Building...'
+                echo 'Static Code Analisys'
                 sh 'mvn -f rest-api/REST-API/pom.xml sonar:sonar'
             }
         }
-        
+        stage('Slack Notification') {
+            steps {
+                echo 'Notifying slack'
+                slackSend baseUrl: 'https://l2b6ed.slack.com/services/hooks/jenkins-ci',
+                channel: '#tqs_work',
+                color: 'good',
+                message: 'New delivery',
+                tokenCredentialId: '749nOdVmk8TOVvqZll0kHrHV'
+            }
+        }
         
     }
 }
