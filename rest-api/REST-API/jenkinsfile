@@ -9,7 +9,6 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Building...'
-                sh 'fuser -k 8090/tcp'
                 sh 'ls'
                 sh 'mvn -f rest-api/REST-API/pom.xml clean compile'
             }
@@ -18,6 +17,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn -f rest-api/REST-API/pom.xml test'
+                sh 'cat file.txt'
                 sh 'nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&'
             }
         }
