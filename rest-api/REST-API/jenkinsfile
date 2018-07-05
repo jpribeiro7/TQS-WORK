@@ -9,7 +9,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Building...'
-                sh 'kill -9 `lsof -t -i :8090`'
+                sh 'fuser -k 8090/tcp'
                 sh 'mvn -f rest-api/REST-API/pom.xml clean compile'
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn -f rest-api/REST-API/pom.xml test'
-                sh 'nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run > running-rest.txt &'
+                sh 'nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run > running-rest.txt 2>&1 &'
             }
         }
          stage('Static Code Analisys') {
