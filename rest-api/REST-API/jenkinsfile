@@ -16,7 +16,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'mvn -f rest-api/REST-API/pom.xml test'
+                dir 'rest-api/REST-API/'
+                sh 'mvn test'
                 sh 'nohup mvn spring-boot:run'
             }
         }
