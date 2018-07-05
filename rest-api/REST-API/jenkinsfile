@@ -16,9 +16,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                dir 'rest-api/REST-API/'
-                sh 'mvn test'
-                sh 'nohup mvn spring-boot:run'
+                sh 'mvn -f rest-api/REST-API/pom.xml test'
+                sh 'nohup mvn -f rest-api/REST-API/ spring-boot:run '
             }
         }
          stage('Static Code Analisys') {
