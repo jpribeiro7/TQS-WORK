@@ -11,6 +11,12 @@ pipeline {
                 sh 'mvn -f rest-api/REST-API/pom.xml clean compile'
             }
         }
+        stage('Static Code Analisys') {
+            steps {
+                echo 'Building...'
+                sh 'mvn -f rest-api/REST-API/pom.xml sonar:sonar'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing...'
