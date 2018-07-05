@@ -4,7 +4,9 @@ pipeline {
         maven "Apache Maven 3.3.9"
     }
 
-    stage('Slack Notification') {
+    
+    stages {
+        stage('Slack Notification') {
             steps {
                 echo 'Building...'
                 slackSend baseUrl: 'https://l2b6ed.slack.com/services/hooks/jenkins-ci',
@@ -14,7 +16,6 @@ pipeline {
                 tokenCredentialId: '749nOdVmk8TOVvqZll0kHrHV'
             }
         }
-    stages {
         stage('Compile') {
             steps {
                 echo 'Building...'
