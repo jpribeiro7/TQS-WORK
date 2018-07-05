@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'fuser -k 8090/tcp'
+                sh 'ls'
                 sh 'mvn -f rest-api/REST-API/pom.xml clean compile'
             }
         }
