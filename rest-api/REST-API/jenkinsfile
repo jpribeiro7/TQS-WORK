@@ -18,13 +18,13 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn -f rest-api/REST-API/pom.xml test'
+                sh "nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&"
             }
         }
          stage('Static Code Analisys') {
             steps {
                 echo 'Static Code Analisys'
                 sh 'mvn -f rest-api/REST-API/pom.xml sonar:sonar'
-                sh "nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&"
             }
         }
         stage('Slack Notification') {
