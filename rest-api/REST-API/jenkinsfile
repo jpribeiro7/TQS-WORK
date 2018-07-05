@@ -4,6 +4,16 @@ pipeline {
         maven "Apache Maven 3.3.9"
     }
 
+    stage('Slack Notification') {
+            steps {
+                echo 'Building...'
+                slackSend baseUrl: 'https://l2b6ed.slack.com/services/hooks/jenkins-ci',
+                channel: '#tqs_work',
+                color: 'good',
+                message: 'Testing notification',
+                tokenCredentialId: '749nOdVmk8TOVvqZll0kHrHV'
+            }
+        }
     stages {
         stage('Compile') {
             steps {
@@ -23,5 +33,7 @@ pipeline {
                 sh 'mvn -f rest-api/REST-API/pom.xml sonar:sonar'
             }
         }
+        
+        
     }
 }
