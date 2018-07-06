@@ -39,7 +39,11 @@ pipeline {
     }
      post {
          always {
-                sh 'mvn -f rest-api/REST-API/ spring-boot:run > file.txt &'
+                script{
+                    withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+                        sh 'mvn -f rest-api/REST-API/ spring-boot:run > file.txt &'
+                 }
+                }
             }
         }
 }
