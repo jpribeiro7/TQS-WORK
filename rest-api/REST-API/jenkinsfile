@@ -39,7 +39,7 @@ pipeline {
     }
      post {
          always {
-                sh 'nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&'
+                sh 'nohup mvn -f rest-api/REST-API/ spring-boot:run </dev/null >running-test.txt 2>&1 &'
             }
         }
 }
