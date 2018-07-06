@@ -18,12 +18,6 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn -f rest-api/REST-API/pom.xml test'
-                sh '''
-                    nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&
-                   '''
-                sh '''
-                    cat running-rest.txt
-                   '''
             }
         }
          stage('Static Code Analisys') {
@@ -42,6 +36,10 @@ pipeline {
                 tokenCredentialId: '749nOdVmk8TOVvqZll0kHrHV'
             }
         }
-        
     }
+     post {
+         always {
+                sh 'nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&'
+            }
+        }
 }
