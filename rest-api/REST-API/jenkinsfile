@@ -18,7 +18,12 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'mvn -f rest-api/REST-API/pom.xml test'
-                sh "nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&"
+                sh '''
+                    nohup mvn -f rest-api/REST-API/pom.xml spring-boot:run &> running-rest.txt&
+                   '''
+                sh '''
+                    cat running-rest.txt
+                   '''
             }
         }
          stage('Static Code Analisys') {
