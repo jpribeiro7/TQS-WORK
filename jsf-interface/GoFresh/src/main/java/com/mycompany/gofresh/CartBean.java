@@ -94,11 +94,12 @@ public class CartBean {
         String category=params.get("category");
         String description=params.get("description");
         int quantity=Integer.parseInt(params.get("quantity"));
+        String seller=params.get("seller");
 
         System.out.println(params);
         setEmptyCart("");
 
-        Product p = new Product(id, name, category, quantity, price, description);
+        Product p = new Product(id, name, category, quantity, price, description,seller);
         if (cartList.isEmpty()) {
             cartList.add(p);
         } else {
@@ -130,11 +131,12 @@ public class CartBean {
         int id = Integer.parseInt(params.get("id"));
         String category=params.get("category");
         String description=params.get("description");
+        String seller=params.get("seller");
 
         System.out.println(params);
         setEmptyCart("");
 
-        Product p = new Product(id, name, category, 1, price, description);
+        Product p = new Product(id, name, category, 1, price, description,seller);
         if (cartList.isEmpty()) {
             cartList.add(p);
         } else {

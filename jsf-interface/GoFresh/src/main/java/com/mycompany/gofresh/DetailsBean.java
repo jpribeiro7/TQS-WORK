@@ -30,6 +30,17 @@ public class DetailsBean {
     private int id;
     private String category;
     private int quantity;
+    private String seller;
+
+    public String getSeller() {
+        return seller;
+    }
+
+    public void setSeller(String seller) {
+        this.seller = seller;
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -98,6 +109,7 @@ public class DetailsBean {
         description = params.get("description");
         id=Integer.parseInt(params.get("id"));
         category=params.get("category");
+        seller=params.get("seller");
 
         System.out.println(params);
 
