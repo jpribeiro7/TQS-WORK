@@ -1,0 +1,54 @@
+-------------------------------------------------------------------------------
+Test set: FunctionalTests.SeleniumTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 5, Skipped: 1, Time elapsed: 17.264 s <<< FAILURE! - in FunctionalTests.SeleniumTests
+testLogIn(FunctionalTests.SeleniumTests)  Time elapsed: 8.932 s  <<< ERROR!
+java.lang.NullPointerException
+	at FunctionalTests.SeleniumTests.testLogIn(SeleniumTests.java:43)
+
+testLoginFailure(FunctionalTests.SeleniumTests)  Time elapsed: 1.836 s  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=67.0.3396.62)
+  (Driver info: chromedriver=2.39.562737 (dba483cee6a5f15e2e2d73df16968ab10b38a2bf),platform=Linux 4.13.0-45-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 483 milliseconds
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'carlos-GL552JX', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-45-generic', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562737 (dba483cee6a5f15e2e2d73df16968ab10b38a2bf), userDataDir=/tmp/.org.chromium.Chromium.yJ8V8D}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=67.0.3396.62, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: c675d751e46f7f8e3a80de19e6a3f5f3
+	at FunctionalTests.SeleniumTests.testLoginFailure(SeleniumTests.java:58)
+
+testCart(FunctionalTests.SeleniumTests)  Time elapsed: 1.922 s  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=67.0.3396.62)
+  (Driver info: chromedriver=2.39.562737 (dba483cee6a5f15e2e2d73df16968ab10b38a2bf),platform=Linux 4.13.0-45-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 503 milliseconds
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'carlos-GL552JX', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-45-generic', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562737 (dba483cee6a5f15e2e2d73df16968ab10b38a2bf), userDataDir=/tmp/.org.chromium.Chromium.In5Wxx}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=67.0.3396.62, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: d688a660f12420d6e3d606e1a5366766
+	at FunctionalTests.SeleniumTests.testCart(SeleniumTests.java:71)
+
+testProfile(FunctionalTests.SeleniumTests)  Time elapsed: 1.959 s  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=67.0.3396.62)
+  (Driver info: chromedriver=2.39.562737 (dba483cee6a5f15e2e2d73df16968ab10b38a2bf),platform=Linux 4.13.0-45-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 616 milliseconds
+Build info: version: '2.44.0', revision: '76d78cf323ce037c5f92db6c1bba601c2ac43ad8', time: '2014-10-23 13:11:40'
+System info: host: 'carlos-GL552JX', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.13.0-45-generic', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.39.562737 (dba483cee6a5f15e2e2d73df16968ab10b38a2bf), userDataDir=/tmp/.org.chromium.Chromium.TKhHvz}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=67.0.3396.62, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 092ec6c2516bba46c8fcecd14ca1a3c0
+	at FunctionalTests.SeleniumTests.testProfile(SeleniumTests.java:78)
+
+testHomeFilter(FunctionalTests.SeleniumTests)  Time elapsed: 2.589 s  <<< ERROR!
+java.lang.NullPointerException
+	at FunctionalTests.SeleniumTests.testHomeFilter(SeleniumTests.java:94)
+

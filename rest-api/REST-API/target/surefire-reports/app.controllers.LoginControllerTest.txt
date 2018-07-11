@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: app.controllers.LoginControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.099 s <<< FAILURE! - in app.controllers.LoginControllerTest
+testRegister(app.controllers.LoginControllerTest)  Time elapsed: 0.032 s  <<< ERROR!
+com.fasterxml.jackson.databind.JsonMappingException: 
+Multiple back-reference properties with name 'defaultReference'
+ at [Source: (String)"{
+    "username": "somee",
+    "password": "veggie",
+    "name": "Alberto Coelho",
+    "email": "someemusvegie@hotmail.com",
+    "nif": 2233222222,
+    "address": "Lugar de cambres",
+    "codigo_postal": "5122",
+    "phone_number": 94,
+    "type": "client"
+}"; line: 1, column: 1]
+	at app.controllers.LoginControllerTest.testRegister(LoginControllerTest.java:109)
+Caused by: java.lang.IllegalArgumentException: Multiple back-reference properties with name 'defaultReference'
+	at app.controllers.LoginControllerTest.testRegister(LoginControllerTest.java:109)
+

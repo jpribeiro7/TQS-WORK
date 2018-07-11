@@ -1,0 +1,4 @@
+app/controllers/LoginControllerTest.class
+app/controllers/UserControllerTest.class
+IntegrationTest/JpaTest.class
+app/repository/UserRepositoryTest.class
