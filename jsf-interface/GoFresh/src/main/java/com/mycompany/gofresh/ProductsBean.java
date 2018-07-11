@@ -36,6 +36,7 @@ public class ProductsBean {
     private String categoria;
 
     private String searchText;
+    private String sellerText;
     private ArrayList<String> categorias;
     private ArrayList<Product> productList;
 
@@ -48,7 +49,18 @@ public class ProductsBean {
         this.searchText = "";
         this.minValue = minValue();
         this.maxValue = maxValue();
+        this.sellerText="";
     }
+
+    public String getSellerText() {
+        return sellerText;
+    }
+
+    public void setSellerText(String sellerText) {
+        this.sellerText = sellerText;
+    }
+    
+    
 
     public void setProductList(ArrayList<Product> productList) {
         this.productList = productList;
@@ -128,6 +140,21 @@ public class ProductsBean {
         setProductList((ArrayList<Product>) results);
     }
 
+    public void bySeller() {
+        if (this.sellerText.isEmpty()) {
+            byCategory();
+        }
+        System.out.println("bYSeller");
+        System.out.println(sellerText);
+        List<Product> results = new ArrayList<>();
+        for (Product p : productList) {
+            if (p.getSeller().contains(this.sellerText)) {
+                results.add(p);
+            }
+        }
+        setProductList((ArrayList<Product>) results);
+    }
+    
     public void allCategories() {
         String targetUrl = "http://localhost:8090/product/categories";
 
@@ -150,7 +177,7 @@ public class ProductsBean {
     }
 
     public void allProducts() {
-        String targetUrl = "http://localhost:8090/product/all";
+        String targetUrl = "http://localhost:8090/sellerProduct/all";
         Client client = ClientBuilder.newClient();
         List<Product> results = new ArrayList<>();
         Response response = client.target(targetUrl).request(MediaType.APPLICATION_JSON).get();
@@ -158,14 +185,20 @@ public class ProductsBean {
         System.out.println(arr);
         for (JsonValue j : arr) {
             JsonObject jo = (JsonObject) j;
-            String name = jo.getString("name");
-            String category = jo.getString("category");
-            String description = jo.getString("description");
-            int id = jo.getInt("id");
-            //BigDecimal b = new BigDecimal(jo.getInt("price"));
-            //float price = b.floatValue();
-            float price = (float) 2.3;
-            Product p = new Product(id, name, category, 1, price, description);
+            JsonObject product = (JsonObject) jo.get("product");
+            String name=product.getString("name");
+            String category=product.getString("category");
+            String description=product.getString("description");
+            
+            int id = product.getInt("id");
+            
+            BigDecimal b = new BigDecimal(Float.parseFloat(jo.get("price").toString()));
+            float price = b.floatValue();
+            JsonObject seller = (JsonObject) jo.get("seller");
+            String sellerName=seller.getString("username");
+            
+            
+            Product p = new Product(id, name, category, 1, price, description,sellerName);
             results.add(p);
         }
         response.close();
@@ -186,27 +219,17 @@ public class ProductsBean {
         if ("Todos".equals(getCategoria())) {
             allProducts();
         } else if (!"Todos".equals(getCategoria())) {
-            String targetUrl = "http://localhost:8090/product/byCategory?category=" + getCategoria();
-            Client client = ClientBuilder.newClient();
+            
             List<Product> results = new ArrayList<>();
-            Response response = client.target(targetUrl).request(MediaType.APPLICATION_JSON).get();
-            JsonArray arr = response.readEntity(JsonArray.class);
+            
             System.out.println("teste");
-            for (JsonValue j : arr) {
-                JsonObject jo = (JsonObject) j;
-                System.out.println(jo);
-                String name = jo.getString("name");
-                String category = jo.getString("category");
-                String description = jo.getString("description");
-                int id = jo.getInt("id");
-                //BigDecimal b = new BigDecimal(jo.getInt("price"));
-                //float price = b.floatValue();
-                float price = (float) 2.3;
-                Product p = new Product(id, name, category, 1, price, description);
-                results.add(p);
+            
+            for (Product p: productList){
+                if(p.getCategory().contains(categoria)){
+                    results.add(p);
+                }
             }
-            response.close();
-            client.close();
+           
             System.out.println(results);
             setProductList((ArrayList<Product>) results);
         }

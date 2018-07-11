@@ -21,15 +21,34 @@ public class Product implements Serializable{
     private String description;
     private int quantity;
     private float subtotal;
+    private String seller;
+    
     
 
-    public Product(int id,String name, String category,int quantity, float price, String description) {
+    public Product(int id,String name, String category,int quantity, float price, String description,String seller) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
         this.id = id;
         this.quantity=quantity;
+        this.seller=seller;
+    }
+
+    public float getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(float subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public String getSeller() {
+        return seller;
+    }
+
+    public void setSeller(String seller) {
+        this.seller = seller;
     }
     
     
@@ -87,7 +106,7 @@ public class Product implements Serializable{
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", description=" + description + ", quantity=" + quantity + ", subtotal=" + subtotal + '}';
+        return "\"id\":" + id + ",\"name\":\"" + name + "\",\"category\":\"" + category + "\",\"price\":" + price + ",\"description\":\"" + description + "\",\"quantity\":" + quantity + ",\"seller\":\"" + seller + "\"}";
     }
 
     

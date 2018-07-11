@@ -188,7 +188,7 @@ public class RegisterBean {
             
             return "signIn";
         } else {
-            setErrors("Ocurreu algum erro");
+            setErrors("Ocorreu algum erro");
             return "register";
         }
         

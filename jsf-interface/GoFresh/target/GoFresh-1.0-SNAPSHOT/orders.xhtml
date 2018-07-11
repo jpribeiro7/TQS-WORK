@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>GoFresh</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <!--===============================================================================================-->
+    </head>
+    <body class="animsition">
+
+        <!-- Header -->
+        <header class="header1">
+            <!-- Header desktop -->
+            <div class="container-menu-header">
+
+
+                <div class="wrap_header">
+                    <!-- Logo -->
+                    <a href="index.html" class="logo">
+                        <img src="images/icons/logo.jpg" alt="IMG-LOGO"/>
+                    </a>
+
+                    <!-- Menu -->
+                    <div class="wrap_menu ">
+                        <nav class="menu">
+                            <ul class="main_menu">
+                                
+
+                                <li class="">
+                                    <a href="index.xhtml">Home</a>
+                                </li>
+                                
+                                <li class="">
+                                    <a href="cart.xhtml">Cart</a>
+                                </li>
+                                <li class="">
+                                    <a href="profile.xhtml">Profile</a>
+                                </li>
+                                <li class="sale-noti">
+                                    <a href="orders.xhtml">My Orders</a>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Header Icon -->
+                    <div class="header-icons" style="font-size: 14px">
+                        Hello, #{user.name} <h:outputText value="&#160;" />
+                        <a href="profile.xhtml" class="header-wrapicon1 dis-block">
+                            <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON"/>
+                        </a>
+
+
+                        <span class="linedivide1"></span>
+
+                        <div class="header-wrapicon2">
+                            <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON"/>
+
+
+                            <!-- Header cart noti -->
+                            <div class="header-cart header-dropdown">
+                                <ul class="header-cart-wrapitem">
+                                    <p>#{cart.emptyCart}</p>
+                                    <c:forEach items="#{cart.cartList}" var="item">
+                                        <li class="header-cart-item">
+                                            <div class="header-cart-item-img">
+                                                <img src="images/#{item.name}.jpg" alt="IMG"/>
+                                            </div>
+
+                                            <div class="header-cart-item-txt">
+                                                <a href="#" class="header-cart-item-name">
+                                                    #{item.name}
+                                                </a>
+
+                                                <span class="header-cart-item-info">
+                                                    #{item.quantity} x #{item.price}
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </c:forEach>
+
+
+                                </ul>
+
+                                <div class="header-cart-total">
+                                    Total: #{cart.total}€
+                                </div>
+
+                                <div class="header-cart-buttons">
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="cart.xhtml" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            View Cart
+                                        </a>
+                                    </div>
+
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="checkout.xhtml" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            Check Out
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="linedivide1"></span>
+                        <a href="signIn.xhtml" style="" ><i class="fa fa-sign-out"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </header>
+
+        <section class="cart bgwhite p-t-70 p-b-100">
+            <center><h2>My Orders</h2></center>
+            <br/>
+            <br/>
+            <div class="container" >
+                <!-- Cart item -->
+                <b:accordion style="font: 10px">
+                    <c:forEach var="ord" items="#{order.listClient}">
+                        <b:panel id="panel" title="#{ord.date}" style="border-radius: 4px; background-color: gainsboro" >
+                            <br></br>
+                            <h5>Date:</h5>#{ord.date}
+                            <br></br><br></br>
+                            <h5>Estado:</h5>#{ord.state}
+                            <br></br><br></br>
+                            <h5>Morada:</h5>
+                            #{ord.address}
+                            <br></br><br></br>
+                            <h5>Lista Produtos:</h5>
+                            <c:forEach var="pro" items="#{ord.list}">
+                               
+                                #{pro.quantity}x #{pro.name}<br></br>
+                                
+                            </c:forEach>
+                            <br></br><br></br>
+                            <h5>Preço:</h5>
+                            #{ord.total}€
+                            <br></br><br></br>
+                            <hr/>
+                        </b:panel>
+                        
+                        
+                    </c:forEach>
+                    
+                </b:accordion>
+            </div>
+
+
+
+
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+
+            <div class="t-center p-l-15 p-r-15">
+                <a href="#">
+                    <img class="h-size2" src="images/icons/paypal.png" alt="IMG-PAYPAL"/>
+                </a>
+
+                <a href="#">
+                    <img class="h-size2" src="images/icons/visa.png" alt="IMG-VISA"/>
+                </a>
+
+                <a href="#">
+                    <img class="h-size2" src="images/icons/mastercard.png" alt="IMG-MASTERCARD"/>
+                </a>
+
+                <a href="#">
+                    <img class="h-size2" src="images/icons/express.png" alt="IMG-EXPRESS"/>
+                </a>
+
+                <a href="#">
+                    <img class="h-size2" src="images/icons/discover.png" alt="IMG-DISCOVER"/>
+                </a>
+
+                <div class="t-center s-text8 p-t-20">
+                    Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <!-- Back to top -->
+        <div class="btn-back-to-top bg0-hov" id="myBtn">
+            <span class="symbol-btn-back-to-top">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <!-- Container Selection -->
+        <div id="dropDownSelect1"></div>
+        <div id="dropDownSelect2"></div>
+
+
+
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+        <script type="text/javascript">
+            $(".selection-1").select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $('#dropDownSelect1')
+            });
+
+            $(".selection-2").select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $('#dropDownSelect2')
+            });
+        </script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
