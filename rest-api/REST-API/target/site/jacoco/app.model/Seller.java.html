@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Seller.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.model</a> &gt; <span class="el_source">Seller.java</span></div><h1>Seller.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.model;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonView;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+
+/**
+ *
+ * @author Pedro
+ */
+@Entity
+public class Seller extends User{
+    
+<span class="fc" id="L24">    @OneToMany(mappedBy=&quot;seller&quot;,cascade = CascadeType.ALL)</span>
+    @JsonBackReference(&quot;sellerList&quot;)
+    private List&lt;Seller_Product&gt; productList = new ArrayList&lt;&gt;();
+
+    public Seller(String username, String password, String name, String email, Integer nif, String address, String codigo_postal, Integer phone_number, String type) {
+<span class="fc" id="L29">        super(username, password, name, email, nif, address, codigo_postal, phone_number,type);</span>
+<span class="fc" id="L30">    }</span>
+
+<span class="fc" id="L32">    public Seller() {</span>
+<span class="fc" id="L33">    }</span>
+
+    public List&lt;Seller_Product&gt; getProductList() {
+<span class="nc" id="L36">        return productList;</span>
+    }
+
+    public void setProductList(List&lt;Seller_Product&gt; productList) {
+<span class="nc" id="L40">        this.productList = productList;</span>
+<span class="nc" id="L41">    }</span>
+
+    
+    
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

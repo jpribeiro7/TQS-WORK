@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Seller_Product.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.model</a> &gt; <span class="el_source">Seller_Product.java</span></div><h1>Seller_Product.java</h1><pre class="source lang-java linenums">
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.model;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.io.Serializable;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+/**
+ *
+ * @author Pedro
+ */
+@Entity
+public class Seller_Product implements Serializable{
+    
+    @EmbeddedId
+    private Seller_ProductPk primary_key;
+    private double price;
+    private int quantity;
+    
+    @ManyToOne()
+    @JoinColumn(name = &quot;seller_id&quot;)
+    @JsonManagedReference
+    private Seller seller;
+    
+    @ManyToOne()
+    @JsonManagedReference
+    @JoinColumn(name = &quot;product_id&quot;)
+    private Product product;
+    
+    @ManyToOne()
+    @JoinColumn(name = &quot;basket_id&quot;)
+    private Basket basket;
+    
+    @ManyToOne()
+    @JoinColumn(name = &quot;order_id&quot;)
+    private Ordering ordering;
+    
+<span class="fc" id="L47">    public Seller_Product(double price, int quantity, Seller seller, Product product) {</span>
+<span class="fc" id="L48">        this.primary_key = new Seller_ProductPk(product.getId(),seller.getId());</span>
+<span class="fc" id="L49">        this.price = price;</span>
+<span class="fc" id="L50">        this.quantity = quantity;</span>
+<span class="fc" id="L51">        this.seller = seller;</span>
+<span class="fc" id="L52">        this.product = product;</span>
+<span class="fc" id="L53">    }</span>
+
+    public Basket getBasket() {
+<span class="nc" id="L56">        return basket;</span>
+    }
+
+    public void setBasket(Basket basket) {
+<span class="fc" id="L60">        this.basket = basket;</span>
+<span class="fc" id="L61">    }</span>
+
+    public Ordering getOrdering() {
+<span class="nc" id="L64">        return ordering;</span>
+    }
+
+    public void setOrdering(Ordering ordering) {
+<span class="fc" id="L68">        this.ordering = ordering;</span>
+<span class="fc" id="L69">    }</span>
+    
+    
+    
+<span class="nc" id="L73">    public Seller_Product(Seller_ProductPk pk, double price, int quantity){</span>
+<span class="nc" id="L74">        this.primary_key = pk;</span>
+<span class="nc" id="L75">        this.price = price;</span>
+<span class="nc" id="L76">        this.quantity = quantity;</span>
+<span class="nc" id="L77">    }</span>
+    
+<span class="fc" id="L79">    public Seller_Product(){</span>
+        
+<span class="fc" id="L81">    }</span>
+
+    public Seller_ProductPk getPrimary_key() {
+<span class="fc" id="L84">        return primary_key;</span>
+    }
+
+    public void setPrimary_key(Seller_ProductPk primary_key) {
+<span class="nc" id="L88">        this.primary_key = primary_key;</span>
+<span class="nc" id="L89">    }</span>
+
+    public double getPrice() {
+<span class="nc" id="L92">        return price;</span>
+    }
+
+    public void setPrice(double price) {
+<span class="nc" id="L96">        this.price = price;</span>
+<span class="nc" id="L97">    }</span>
+
+    public int getQuantity() {
+<span class="nc" id="L100">        return quantity;</span>
+    }
+
+    public void setQuantity(int quantity) {
+<span class="nc" id="L104">        this.quantity = quantity;</span>
+<span class="nc" id="L105">    }</span>
+
+    public Seller getSeller() {
+<span class="nc" id="L108">        return seller;</span>
+    }
+
+    public void setSeller(Seller seller) {
+<span class="nc" id="L112">        this.seller = seller;</span>
+<span class="nc" id="L113">    }</span>
+
+    public Product getProduct() {
+<span class="nc" id="L116">        return product;</span>
+    }
+
+    public void setProduct(Product product) {
+<span class="nc" id="L120">        this.product = product;</span>
+<span class="nc" id="L121">    }</span>
+    
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.controllers</a> &gt; <span class="el_source">UserController.java</span></div><h1>UserController.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.controllers;
+
+import java.util.List;
+import app.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import org.springframework.web.bind.annotation.RestController;
+import app.services.UserService;
+
+/**
+ *
+ * @author salome
+ */
+@RestController()
+@RequestMapping(value=&quot;/user&quot;)
+<span class="fc" id="L24">public class UserController {</span>
+    
+    @Autowired
+    private UserService userService;
+    
+    @RequestMapping(value=&quot;/all&quot;,method = GET)
+    public ResponseEntity&lt;?&gt; getAllUsers(){
+<span class="fc" id="L31">        List&lt;User&gt; list = userService.getAllUsers();</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        return list!=null ? </span>
+                new ResponseEntity&lt;List&lt;User&gt;&gt;(list,HttpStatus.OK): 
+                new ResponseEntity&lt;String&gt;(&quot;No products were found&quot;,HttpStatus.NOT_FOUND);
+    }
+    
+    @RequestMapping(value=&quot;/allClients&quot;,method = GET)
+    public ResponseEntity&lt;?&gt; getAllClients(){
+<span class="nc" id="L39">        List&lt;User&gt; list = userService.getAllClients();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        return list!=null ? </span>
+                new ResponseEntity&lt;List&lt;User&gt;&gt;(list,HttpStatus.OK): 
+                new ResponseEntity&lt;String&gt;(&quot;No products were found&quot;,HttpStatus.NOT_FOUND);
+    }
+    
+    @RequestMapping(value=&quot;/allSellers&quot;,method = GET)
+    public ResponseEntity&lt;?&gt; getAllSellers(){
+<span class="nc" id="L47">        List&lt;User&gt; list = userService.getAllSellers();</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        return list!=null ? </span>
+                new ResponseEntity&lt;List&lt;User&gt;&gt;(list,HttpStatus.OK): 
+                new ResponseEntity&lt;String&gt;(&quot;No products were found&quot;,HttpStatus.NOT_FOUND);
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Application.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app</a> &gt; <span class="el_source">Application.java</span></div><h1>Application.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app;
+
+import app.model.Basket;
+import app.model.Client;
+import app.model.DateSet;
+import app.model.DeliveryStatus;
+import app.model.Ordering;
+import app.model.Product;
+import app.model.Seller;
+import app.model.Seller_Product;
+import app.model.Seller_ProductPk;
+import java.util.Arrays;
+import app.model.User;
+import app.repository.BasketRepository;
+import app.repository.OrderingRepository;
+import app.repository.ProductRepository;
+import app.repository.SellerProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import app.repository.UserRepository;
+import app.util.Type;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author Pedro
+ */
+@SpringBootApplication()
+<span class="fc" id="L37">public class Application implements CommandLineRunner {</span>
+    public static void main(String[] args){
+<span class="nc" id="L39">        SpringApplication.run(Application.class, args);</span>
+<span class="nc" id="L40">    }</span>
+
+    @Autowired
+    private UserRepository userRepository;
+    
+    @Autowired 
+    private ProductRepository productRepository;
+    
+    @Autowired 
+    private SellerProductRepository sellerProductRepository;
+    
+    @Autowired
+    private OrderingRepository orderingRepository;
+    
+    @Autowired
+    private BasketRepository basketRepository;
+    
+    @Override
+    public void run(String... args) throws Exception {
+        // --------------------------------------------------------------- USERS ------------------------------------------------------
+<span class="fc" id="L60">        final User u1 = new Seller(&quot;veggie&quot;,&quot;arroz&quot;,&quot;Alberto Coelho&quot;,&quot;habemusvegie@hotmail.com&quot;,222222222,&quot;Lugar de cambres&quot;,&quot;5122&quot;,94,&quot;seller&quot;);</span>
+<span class="fc" id="L61">        final User u2 = new Client(&quot;legumes&quot;,&quot;arroz&quot;,&quot;João Manel&quot;,&quot;sou@hotmail.com&quot;,233333333,&quot;Lugar de cambres&quot;,&quot;5122&quot;,94,&quot;client&quot;);</span>
+<span class="fc" id="L62">        final User u3 = new Seller(&quot;sado&quot;,&quot;arroz&quot;,&quot;Carlos&quot;,&quot;aquid@hotmail.com&quot;,224444444,&quot;Lugar de cambres&quot;,&quot;5122&quot;,94,&quot;seller&quot;);</span>
+<span class="fc" id="L63">        final User u4 = new Client(&quot;marials&quot;,&quot;arroz&quot;,&quot;Arinto&quot;,&quot;naosei@hotmail.com&quot;,227777777,&quot;Lugar de cambres&quot;,&quot;5122&quot;,94,&quot;client&quot;);</span>
+<span class="fc" id="L64">        final User u5 = new Seller(&quot;queremos&quot;,&quot;arroz&quot;,&quot;Salome&quot;,&quot;fazer@hotmail.com&quot;,299999999,&quot;Lugar de cambres&quot;,&quot;5122&quot;,94,&quot;seller&quot;);</span>
+<span class="fc" id="L65">        final User u6 = new Client(&quot;couves&quot;,&quot;arroz&quot;,&quot;Quim&quot;,&quot;isto@hotmail.com&quot;,222222496,&quot;Lugar de cambres&quot;,&quot;5122&quot;,94,&quot;client&quot;);</span>
+<span class="fc" id="L66">        userRepository.saveAll(Arrays.asList(u1,u2,u3,u4,u5,u6));</span>
+        
+        
+        //--------------------------------------------------------------- PRODUCTS ----------------------------------------------------
+<span class="fc" id="L70">        final Product p1 = new Product(&quot;couve&quot;,&quot;legume&quot;,&quot;cultivado no sul&quot;);</span>
+<span class="fc" id="L71">        final Product p2 = new Product(&quot;alface&quot;,&quot;legume&quot;,&quot;é verde&quot;);</span>
+<span class="fc" id="L72">        final Product p3 = new Product(&quot;beringela&quot;,&quot;legume&quot;,&quot;é grande&quot;);</span>
+<span class="fc" id="L73">        final Product p4 = new Product(&quot;tomate&quot;,&quot;fruta&quot;,&quot;fresco e apanhado&quot;);</span>
+<span class="fc" id="L74">        final Product p5 = new Product(&quot;cenoura&quot;,&quot;legume&quot;,&quot;deixa os olhos bonitos&quot;);</span>
+<span class="fc" id="L75">        final Product p6 = new Product(&quot;batata&quot;,&quot;leguminosa&quot;,&quot;fritas são boas&quot;);</span>
+<span class="fc" id="L76">        productRepository.saveAll(Arrays.asList(p1,p2,p3,p5,p6));</span>
+        
+        //----------------------------------------------------------------- SELLER_PRODUCT ----------------------------------------------------
+<span class="fc" id="L79">        final Seller_Product sp1 = new Seller_Product(2, 10,(Seller) u1, p6);</span>
+<span class="fc" id="L80">        final Seller_Product sp2 = new Seller_Product(1, 4,(Seller) u1, p1);</span>
+<span class="fc" id="L81">        final Seller_Product sp3 = new Seller_Product(0.5, 2,(Seller) u1, p5);</span>
+<span class="fc" id="L82">        final Seller_Product sp4 = new Seller_Product(1, 4,(Seller) u3, p2);</span>
+<span class="fc" id="L83">        final Seller_Product sp5 = new Seller_Product(0.5, 2,(Seller) u3, p3);</span>
+<span class="fc" id="L84">        sellerProductRepository.saveAll(Arrays.asList(sp1,sp2,sp3,sp4,sp5));</span>
+        
+        //----------------------------------------------------------- ORDERS ----------------------------------------------------
+<span class="fc" id="L87">        List&lt;Seller_Product&gt; produtos1 = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L88">        produtos1.add(sp1); produtos1.add(sp2); produtos1.add(sp3);</span>
+<span class="fc" id="L89">        List&lt;Seller_Product&gt; produtos2 = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L90">        produtos2.add(sp4); produtos2.add(sp5);</span>
+        
+<span class="fc" id="L92">        p6.setProductsSeller(produtos1);</span>
+<span class="fc" id="L93">        p1.setProductsSeller(produtos1);</span>
+<span class="fc" id="L94">        p5.setProductsSeller(produtos1);</span>
+<span class="fc" id="L95">        p2.setProductsSeller(produtos2);</span>
+<span class="fc" id="L96">        p3.setProductsSeller(produtos2);</span>
+<span class="fc" id="L97">        productRepository.saveAll(Arrays.asList(p6,p1,p5,p2,p3));</span>
+<span class="fc" id="L98">        final Ordering ord1 = new Ordering(u2.getId(), new DateSet(8,6,2018), produtos1, &quot;Rua da Batata Quente&quot;, DeliveryStatus.NOTDELIVERED);</span>
+<span class="fc" id="L99">        final Ordering ord2 = new Ordering(u4.getId(), new DateSet(10,7,2018), produtos2, &quot;Rua da Azeitona&quot;, DeliveryStatus.DELIVERED);</span>
+<span class="fc" id="L100">        orderingRepository.saveAll(Arrays.asList(ord1, ord2));</span>
+<span class="fc" id="L101">        sp1.setOrdering(ord1);</span>
+<span class="fc" id="L102">        sp2.setOrdering(ord1);</span>
+<span class="fc" id="L103">        sp3.setOrdering(ord1);</span>
+<span class="fc" id="L104">        sp4.setOrdering(ord2);</span>
+<span class="fc" id="L105">        sp5.setOrdering(ord2);</span>
+<span class="fc" id="L106">        sellerProductRepository.saveAll(Arrays.asList(sp1,sp2,sp3,sp4,sp5));</span>
+        
+         //----------------------------------------------------------- BASKET ----------------------------------------------------
+<span class="fc" id="L109">        final Basket basket1 = new Basket(100.0, produtos1);</span>
+<span class="fc" id="L110">        final Basket basket2 = new Basket(64.0, produtos2);</span>
+<span class="fc" id="L111">        basketRepository.saveAll(Arrays.asList(basket1, basket2));</span>
+<span class="fc" id="L112">        sp1.setBasket(basket1);</span>
+<span class="fc" id="L113">        sp2.setBasket(basket1);</span>
+<span class="fc" id="L114">        sp3.setBasket(basket1);</span>
+<span class="fc" id="L115">        sp4.setBasket(basket2);</span>
+<span class="fc" id="L116">        sp5.setBasket(basket2);</span>
+<span class="fc" id="L117">        sellerProductRepository.saveAll(Arrays.asList(sp1,sp2,sp3,sp4,sp5));</span>
+
+<span class="fc" id="L119">    }   </span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,6 +1,8 @@
 app/model/Seller_Product.class
 app/repository/OrderingRepository.class
+app/services/BasketService.class
 app/controllers/ProdutoController.class
+app/requestBody/BasketBody.class
 app/model/User.class
 app/model/DateSet.class
 app/services/SellerProductService.class
@@ -12,10 +14,13 @@ app/services/ProdutoService.class
 app/services/UserService.class
 app/requestBody/LoginBody.class
 app/controllers/SellerProductController.class
+app/model/DeliveryStatus.class
 app/requestBody/SellerProductBody.class
 app/model/Product.class
 app/model/Ordering.class
 app/model/Client.class
+app/requestBody/OrderBody.class
+app/repository/BasketRepository.class
 app/controllers/LoginController.class
 app/model/Seller_ProductPk.class
 app/Application.class
@@ -26,3 +31,4 @@ app/controllers/OrderingController.class
 app/model/Seller.class
 app/services/OrderingService.class
 app/util/Type.class
+app/controllers/BasketController.class

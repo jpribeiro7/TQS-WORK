@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoginService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.services</a> &gt; <span class="el_source">LoginService.java</span></div><h1>LoginService.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.services;
+
+import app.model.Client;
+import app.model.Seller;
+import app.model.User;
+import app.repository.UserRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @author Pedro
+ */
+@Service
+<span class="fc" id="L21">public class LoginService {</span>
+    
+    @Autowired
+    private UserRepository userRepository;
+    
+    public User authenticate(String username, String password){
+<span class="nc" id="L27">        User user = userRepository.findByUsername(username);</span>
+<span class="nc bnc" id="L28" title="All 4 branches missed.">        if(user!=null &amp;&amp; user.getPassword().equals(password)){</span>
+<span class="nc" id="L29">            return user;</span>
+        }
+<span class="nc" id="L31">        return null;</span>
+    }
+
+    public boolean register(User data) {
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if(checkIfCanAdd(data)){</span>
+<span class="nc" id="L36">            userRepository.save(data);</span>
+<span class="nc" id="L37">            return true;</span>
+        }
+<span class="nc" id="L39">        return false;</span>
+    }
+    
+    private boolean checkIfCanAdd(User user){
+<span class="nc" id="L43">        List&lt;User&gt; userList = userRepository.findAll();</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (!userList.stream().noneMatch(</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">                    (u) -&gt; (u.getUsername().equals(user.getUsername()) </span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">                    || u.getEmail().equals(user.getEmail()) </span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">                    || u.getNif().equals(user.getNif()))</span>
+                )) 
+        {
+<span class="nc" id="L50">            return false;</span>
+        }
+<span class="nc" id="L52">        return true;</span>
+    }
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

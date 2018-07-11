@@ -62,11 +62,9 @@ public class BasketController {
     @RequestMapping(value="/makebasket", method = POST)
     public ResponseEntity<?> register(@RequestBody BasketBody data){
         ResponseEntity<?> response = null;
-        Basket basket = null;
-        
+        Basket basket = null;    
         basket.setProdutos(data.getProdutos());
         basket.setTotalPrice(data.getTotalPrice());
-        
         response = new ResponseEntity<>(basketService.register(basket),HttpStatus.OK);
         return response;
     }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BasketController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.controllers</a> &gt; <span class="el_source">BasketController.java</span></div><h1>BasketController.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.controllers;
+
+import app.model.Basket;
+import app.model.Ordering;
+import app.requestBody.BasketBody;
+import app.requestBody.OrderBody;
+import app.services.BasketService;
+import app.services.OrderingService;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ *
+ * @author carlos
+ */
+@RestController()
+@RequestMapping(value=&quot;/baskets&quot;)
+<span class="fc" id="L32">public class BasketController {</span>
+    
+    @Autowired
+    private BasketService basketService;
+    
+    @RequestMapping(value=&quot;/all&quot;,method = GET)
+    public ResponseEntity&lt;?&gt; getAllBaskets(){
+<span class="nc" id="L39">        List&lt;Basket&gt; list = basketService.getAllBaskets();</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        return list!=null ? </span>
+                new ResponseEntity&lt;List&lt;Basket&gt;&gt;(list,HttpStatus.OK)
+                : 
+                new ResponseEntity&lt;String&gt;(&quot;No baskets were found&quot;,HttpStatus.NOT_FOUND);
+    }
+    
+    @RequestMapping(value=&quot;/byID&quot;,method = GET)
+    public ResponseEntity&lt;?&gt; getBasketByID(@RequestParam(value=&quot;id&quot;,required=false)Integer id){
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (id == null) </span>
+<span class="nc" id="L49">            return new  ResponseEntity&lt;String&gt;(&quot;ID field wasn't sent&quot;,HttpStatus.BAD_REQUEST);</span>
+<span class="nc" id="L50">        Optional&lt;Basket&gt; basket = basketService.getBasketByID(id);</span>
+<span class="nc" id="L51">        return new ResponseEntity&lt;Optional&lt;Basket&gt;&gt;(basket,HttpStatus.OK);    </span>
+    }
+    
+    @RequestMapping(value=&quot;/byProductName&quot;,method = GET)
+    public ResponseEntity&lt;?&gt; getAllOrdersByClientID(@RequestParam(value=&quot;name&quot;,required=false)String name){
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if (name == null) </span>
+<span class="nc" id="L57">            return new  ResponseEntity&lt;String&gt;(&quot;name field wasn't sent&quot;,HttpStatus.BAD_REQUEST);</span>
+<span class="nc" id="L58">        List&lt;Basket&gt; order = basketService.findByProductName(name);</span>
+<span class="nc" id="L59">        return new ResponseEntity&lt;List&lt;Basket&gt;&gt;(order,HttpStatus.OK); </span>
+    }
+    
+    @RequestMapping(value=&quot;/makebasket&quot;, method = POST)
+    public ResponseEntity&lt;?&gt; register(@RequestBody BasketBody data){
+<span class="nc" id="L64">        ResponseEntity&lt;?&gt; response = null;</span>
+<span class="nc" id="L65">        Basket basket = null;    </span>
+<span class="nc" id="L66">        basket.setProdutos(data.getProdutos());</span>
+<span class="nc" id="L67">        basket.setTotalPrice(data.getTotalPrice());</span>
+<span class="nc" id="L68">        response = new ResponseEntity&lt;&gt;(basketService.register(basket),HttpStatus.OK);</span>
+<span class="nc" id="L69">        return response;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderBody.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.requestBody</a> &gt; <span class="el_source">OrderBody.java</span></div><h1>OrderBody.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.requestBody;
+
+import app.model.Client;
+import app.model.DateSet;
+import app.model.DeliveryStatus;
+import app.model.Seller_Product;
+import java.util.List;
+
+/**
+ *
+ * @author carlos
+ */
+public class OrderBody {
+    private int idClient;
+    private List&lt;Seller_Product&gt; produtos;
+    private String address;
+    private Client client;
+    private DateSet date;
+    private DeliveryStatus deliveryStatus;
+
+<span class="nc" id="L26">    public OrderBody(int idClient, List&lt;Seller_Product&gt; produtos, String address, Client client, DateSet date, DeliveryStatus deliveryStatus) {</span>
+<span class="nc" id="L27">        this.idClient = idClient;</span>
+<span class="nc" id="L28">        this.produtos = produtos;</span>
+<span class="nc" id="L29">        this.address = address;</span>
+<span class="nc" id="L30">        this.client = client;</span>
+<span class="nc" id="L31">        this.date = date;</span>
+<span class="nc" id="L32">        this.deliveryStatus = deliveryStatus;</span>
+<span class="nc" id="L33">    }</span>
+
+    public int getIdClient() {
+<span class="nc" id="L36">        return idClient;</span>
+    }
+
+    public void setIdClient(int idClient) {
+<span class="nc" id="L40">        this.idClient = idClient;</span>
+<span class="nc" id="L41">    }</span>
+
+    public List&lt;Seller_Product&gt; getProdutos() {
+<span class="nc" id="L44">        return produtos;</span>
+    }
+
+    public void setProdutos(List&lt;Seller_Product&gt; produtos) {
+<span class="nc" id="L48">        this.produtos = produtos;</span>
+<span class="nc" id="L49">    }</span>
+
+    public String getAddress() {
+<span class="nc" id="L52">        return address;</span>
+    }
+
+    public void setAddress(String address) {
+<span class="nc" id="L56">        this.address = address;</span>
+<span class="nc" id="L57">    }</span>
+
+    public Client getClient() {
+<span class="nc" id="L60">        return client;</span>
+    }
+
+    public void setClient(Client client) {
+<span class="nc" id="L64">        this.client = client;</span>
+<span class="nc" id="L65">    }</span>
+
+    public DateSet getDate() {
+<span class="nc" id="L68">        return date;</span>
+    }
+
+    public void setDate(DateSet date) {
+<span class="nc" id="L72">        this.date = date;</span>
+<span class="nc" id="L73">    }</span>
+
+    public DeliveryStatus getDeliveryStatus() {
+<span class="nc" id="L76">        return deliveryStatus;</span>
+    }
+
+    public void setDeliveryStatus(DeliveryStatus deliveryStatus) {
+<span class="nc" id="L80">        this.deliveryStatus = deliveryStatus;</span>
+<span class="nc" id="L81">    }</span>
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

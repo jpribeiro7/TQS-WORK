@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ordering.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.model</a> &gt; <span class="el_source">Ordering.java</span></div><h1>Ordering.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.model;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+/**
+ *
+ * @author carlos
+ */
+
+@Entity
+public class Ordering implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = &quot;ORDER_ID&quot;)
+    private Integer id;
+    
+    @OneToMany(mappedBy = &quot;ordering&quot;)
+    private List&lt;Seller_Product&gt; produtos;
+    
+    private int idClient;
+    private String address;
+    private DeliveryStatus deliverStatus;
+    
+    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name = &quot;client_id&quot;)
+    Client client ;
+    
+    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name = &quot;date_id&quot;)
+    DateSet date;
+
+<span class="fc" id="L52">    public Ordering() {</span>
+<span class="fc" id="L53">    }</span>
+    
+<span class="fc" id="L55">    public Ordering(int idClient, DateSet date, List&lt;Seller_Product&gt; produtos, String address, DeliveryStatus deliverStatus){        </span>
+<span class="fc" id="L56">        this.idClient = idClient;</span>
+<span class="fc" id="L57">        this.date = date;</span>
+<span class="fc" id="L58">        this.produtos = produtos;</span>
+<span class="fc" id="L59">        this.address = address;</span>
+<span class="fc" id="L60">        this.deliverStatus = deliverStatus;</span>
+<span class="fc" id="L61">    }  </span>
+    public Integer getId() {
+<span class="fc" id="L63">        return id;</span>
+    }
+
+    public void setId(Integer id) {
+<span class="nc" id="L67">        this.id = id;</span>
+<span class="nc" id="L68">    }</span>
+  
+    public int getIdClient() {
+<span class="nc" id="L71">        return idClient;</span>
+    }
+
+    public void setIdClient(int idClient) {
+<span class="nc" id="L75">        this.idClient = idClient;</span>
+<span class="nc" id="L76">    }</span>
+
+    public DateSet getDate() {
+<span class="nc" id="L79">        return date;</span>
+    }
+
+    public void setDate(DateSet date) {
+<span class="nc" id="L83">        this.date = date;</span>
+<span class="nc" id="L84">    }</span>
+
+    public List&lt;Seller_Product&gt; getProdutos() {
+<span class="nc" id="L87">        return produtos;</span>
+    }
+
+    public void setProdutos(List&lt;Seller_Product&gt; produtos) {
+<span class="nc" id="L91">        this.produtos = produtos;</span>
+<span class="nc" id="L92">    }</span>
+
+    public String getAddress() {
+<span class="nc" id="L95">        return address;</span>
+    }
+
+    public void setAddress(String address) {
+<span class="nc" id="L99">        this.address = address;</span>
+<span class="nc" id="L100">    }</span>
+
+    public Client getClient() {
+<span class="nc" id="L103">        return client;</span>
+    }
+
+    public void setClient(Client client) {
+<span class="nc" id="L107">        this.client = client;</span>
+<span class="nc" id="L108">    }</span>
+    
+    public DeliveryStatus getDeliverStatus() {
+<span class="nc" id="L111">        return deliverStatus;</span>
+    }
+
+    public void setDeliverStatus(DeliveryStatus deliverStatus) {
+<span class="nc" id="L115">        this.deliverStatus = deliverStatus;</span>
+<span class="nc" id="L116">    }</span>
+   
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

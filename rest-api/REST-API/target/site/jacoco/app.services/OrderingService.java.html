@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderingService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.services</a> &gt; <span class="el_source">OrderingService.java</span></div><h1>OrderingService.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.services;
+
+import app.model.Ordering;
+import app.repository.OrderingRepository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @author carlos
+ */
+@Service
+<span class="fc" id="L21">public class OrderingService {</span>
+    
+    @Autowired
+    private OrderingRepository orderingRepository;
+    
+    public List&lt;Ordering&gt; getAllOrders(){
+<span class="nc" id="L27">        return orderingRepository.findAll();</span>
+    }
+    
+    public Optional&lt;Ordering&gt; getOrderByID(int id){
+<span class="nc" id="L31">        return orderingRepository.findById(id);</span>
+    }
+    
+    public List&lt;Ordering&gt; findByClientID(Integer id){
+<span class="nc" id="L35">        List&lt;Ordering&gt; ordersByClientID = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        for(Ordering ord: orderingRepository.findAll()){</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">            if (ord.getIdClient() == id)</span>
+<span class="nc" id="L38">                ordersByClientID.add(ord);</span>
+<span class="nc" id="L39">        }</span>
+<span class="nc" id="L40">        return ordersByClientID;</span>
+    }
+    
+    public boolean register(Ordering data) {
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if(checkIfCanAdd(data))</span>
+        {
+<span class="nc" id="L46">            orderingRepository.save(data);</span>
+<span class="nc" id="L47">            return true;</span>
+        }
+<span class="nc" id="L49">        return false;</span>
+    }
+    
+    private boolean checkIfCanAdd(Ordering order){
+<span class="nc" id="L53">        List&lt;Ordering&gt; orderList = orderingRepository.findAll();</span>
+<span class="nc" id="L54">        return orderList.stream().noneMatch(</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">                (o) -&gt; (o.getAddress().equals(order.getAddress())</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">                        || o.getClient().equals(order.getClient())</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">                        || o.getDate().equals(order.getDate())</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">                        || o.getIdClient()==(order.getIdClient())</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">                        || o.getProdutos() ==(order.getProdutos()))</span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

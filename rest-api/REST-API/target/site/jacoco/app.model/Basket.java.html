@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Basket.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.model</a> &gt; <span class="el_source">Basket.java</span></div><h1>Basket.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.model;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+/**
+ *
+ * @author carlos
+ */
+@Entity
+public class Basket implements Serializable{
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = &quot;BASKET_ID&quot;)
+    private int id;
+
+    private double totalPrice;
+
+    @OneToMany(mappedBy = &quot;basket&quot;)
+    private List&lt;Seller_Product&gt; produtos;
+    
+    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name = &quot;order_id&quot;)
+    Ordering order;
+
+<span class="fc" id="L44">    public Basket() {</span>
+<span class="fc" id="L45">    }</span>
+
+<span class="fc" id="L47">    public Basket(double totalPrice, List&lt;Seller_Product&gt; produtos) {</span>
+<span class="fc" id="L48">        this.totalPrice = totalPrice;</span>
+<span class="fc" id="L49">        this.produtos = produtos;</span>
+        
+<span class="fc" id="L51">    }</span>
+    
+    public List&lt;Seller_Product&gt; getProdutos() {
+<span class="nc" id="L54">        return produtos;</span>
+    }
+
+    public void setProdutos(List&lt;Seller_Product&gt; produtos) {
+<span class="nc" id="L58">        this.produtos = produtos;</span>
+<span class="nc" id="L59">    }</span>
+
+    public Ordering getOrder() {
+<span class="nc" id="L62">        return order;</span>
+    }
+
+    public void setOrder(Ordering order) {
+<span class="nc" id="L66">        this.order = order;</span>
+<span class="nc" id="L67">    }</span>
+    
+    public double getTotalPrice() {
+<span class="nc" id="L70">        return totalPrice;</span>
+    }
+
+    public void setTotalPrice(double totalPrice) {
+<span class="nc" id="L74">        this.totalPrice = totalPrice;</span>
+<span class="nc" id="L75">    }</span>
+    
+    public int getId() {
+<span class="fc" id="L78">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L82">        this.id = id;</span>
+<span class="nc" id="L83">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

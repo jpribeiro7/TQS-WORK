@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BasketService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">REST-API_06_07</a> &gt; <a href="index.source.html" class="el_package">app.services</a> &gt; <span class="el_source">BasketService.java</span></div><h1>BasketService.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package app.services;
+
+import app.model.Basket;
+import app.model.Seller_Product;
+import app.repository.BasketRepository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @author carlos
+ */
+@Service
+<span class="fc" id="L22">public class BasketService {</span>
+    
+    @Autowired
+    private BasketRepository basketRepository;
+
+    public List&lt;Basket&gt; getAllBaskets(){
+<span class="nc" id="L28">        return basketRepository.findAll();</span>
+    }
+    
+    public Optional&lt;Basket&gt; getBasketByID(int id){
+<span class="nc" id="L32">        return basketRepository.findById(id);</span>
+    }
+    
+    public List&lt;Basket&gt; findByProductName(String name){
+<span class="nc" id="L36">        List&lt;Basket&gt; basketsWithProductName = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        for(Basket basket: basketRepository.findAll()){</span>
+<span class="nc" id="L38">            List&lt;Seller_Product&gt; produtos = basket.getProdutos();</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">            for(Seller_Product produto : produtos){</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">                if(produto.getProduct().getName().equals(name))</span>
+<span class="nc" id="L41">                    basketsWithProductName.add(basket);</span>
+<span class="nc" id="L42">            }</span>
+<span class="nc" id="L43">        }</span>
+<span class="nc" id="L44">        return basketsWithProductName;</span>
+    }
+    
+    
+    
+    public boolean register(Basket data) {
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        if(checkIfCanAdd(data))</span>
+        {
+<span class="nc" id="L52">            basketRepository.save(data);</span>
+<span class="nc" id="L53">            return true;</span>
+        }
+<span class="nc" id="L55">        return false;</span>
+    }
+    
+    private boolean checkIfCanAdd(Basket basket){
+<span class="nc" id="L59">        List&lt;Basket&gt; basketList = basketRepository.findAll();</span>
+<span class="nc" id="L60">        return basketList.stream().noneMatch(</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">                (b) -&gt; (b.getProdutos().equals(basket.getProdutos())</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">                        || b.getTotalPrice() == (basket.getTotalPrice()))                       </span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
